@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Platforms
+  - Backgrounds
+  - Button
+  - Deadground
+  - Enemy
+  - Deadtrigger
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Weapon
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2847419941
+    locked: 0
+  - name: Back Decos
+    uniqueID: 1520373877
+    locked: 0
+  - name: Platforms
+    uniqueID: 4102751119
+    locked: 0
+  - name: Props
+    uniqueID: 2505788067
+    locked: 0
+  - name: Player
+    uniqueID: 2522014059
+    locked: 0
+  - name: Walls
+    uniqueID: 3543179485
+    locked: 0
