@@ -92,4 +92,36 @@ public class PlayerMovement : MonoBehaviour
             0f
         );
     }
+
+    private void OnReload(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myCamera.GetComponent<PlayerFire>().Reload();
+        }
+    }
+
+    private void OnSwitchGun(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myCamera.GetComponent<PlayerFire>().SwitchGun();
+        }
+    }
+
+    private void OnInteract(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            GetComponentInChildren<PlayerInteractArea>().Interact();
+        }
+    }
+
+    private void OnUnequip(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            GetComponentInChildren<PlayerFire>().DropGun();
+        }
+    }
 }
