@@ -13,6 +13,6 @@ public class GunStats : ScriptableObject
     public int TotalAmmo;
     public GameObject BulletPrefab;
     public float BulletSpeed;
-    public ParticleSystem Particles;
+    public GameObject Particles;
     public AudioClip ShootSound;
 }
