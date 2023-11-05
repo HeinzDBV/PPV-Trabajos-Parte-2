@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class HealthBarBehavior : MonoBehaviour
 {
-    public float MaxHealth = 100f;
-    public float CurrentHealth = 100f;
+    public float MaxHealth = 200f;
+    public float CurrentHealth = 200f;
     public Animator animator;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         
+        animator.SetFloat("CurrentHealth", CurrentHealth);
         PlayerHealth.OnHealthChanged += UpdateHealthBar;
         PlayerHealth.OnMaxHealthChanged += UpdateMaxHealthBar;
+    }
+
+    void Update()
+    {
+        animator.SetFloat("CurrentHealth", CurrentHealth);
     }
 
     public void UpdateHealthBar(float health)
@@ -29,6 +35,6 @@ public class HealthBarBehavior : MonoBehaviour
 
     public void UpdateAnimation()
     {
-        
+        animator.SetFloat("CurrentHealth", CurrentHealth);
     }
 }
