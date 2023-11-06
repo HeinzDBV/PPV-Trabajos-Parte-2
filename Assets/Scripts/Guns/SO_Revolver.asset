@@ -20,5 +20,5 @@ MonoBehaviour:
   TotalAmmo: 60
   BulletPrefab: {fileID: 2059409173916583374, guid: 05f380a770dab394ca056536c539b4ba, type: 3}
   BulletSpeed: 5
-  Particles: {fileID: 0}
+  Particles: {fileID: 2087078098418067712, guid: bc53a51a1226d9a4ea67067b1fd019cd, type: 3}
   ShootSound: {fileID: 0}
