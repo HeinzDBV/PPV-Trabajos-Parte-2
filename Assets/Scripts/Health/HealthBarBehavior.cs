@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class HealthBarBehavior : MonoBehaviour
 {
-    public float MaxHealth = 200f;
-    public float CurrentHealth = 200f;
-    public Animator animator;
+    public float MaxHealth = 100f;
+    public float CurrentHealth = 100f;
+
+    public float MaxShield = 100f;
+    public float CurrentShield = 100f;
+    public Animator HealthAnimator;
+    public Animator ShieldAnimator;
 
     void Start()
-    {
-        animator = GetComponent<Animator>();
-        
-        animator.SetFloat("CurrentHealth", CurrentHealth);
+    {   
+        HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
+        ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
+
         PlayerHealth.OnHealthChanged += UpdateHealthBar;
         PlayerHealth.OnMaxHealthChanged += UpdateMaxHealthBar;
+    
+        PlayerHealth.OnShieldChanged += UpdateHealthBar;
+        PlayerHealth.OnMaxShieldChanged += UpdateMaxHealthBar;
     }
 
-    void Update()
-    {
-        animator.SetFloat("CurrentHealth", CurrentHealth);
-    }
+    // void Update()
+    // {
+    //     HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
+    //     ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
+    // }
 
     public void UpdateHealthBar(float health)
     {
@@ -35,6 +43,7 @@ public class HealthBarBehavior : MonoBehaviour
 
     public void UpdateAnimation()
     {
-        animator.SetFloat("CurrentHealth", CurrentHealth);
+        HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
+        ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
     }
 }
