@@ -14,16 +14,17 @@ public class HealthBarBehavior : MonoBehaviour
 
     void Start()
     {   
-        HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
-        ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
-
         PlayerHealth.OnHealthChanged += UpdateHealthBar;
         PlayerHealth.OnMaxHealthChanged += UpdateMaxHealthBar;
     
-        PlayerHealth.OnShieldChanged += UpdateHealthBar;
-        PlayerHealth.OnMaxShieldChanged += UpdateMaxHealthBar;
+        PlayerHealth.OnShieldChanged += UpdateShieldBar;
+        PlayerHealth.OnMaxShieldChanged += UpdateMaxShieldBar;
     }
 
+    private void Update()
+    {
+            
+    }
     // void Update()
     // {
     //     HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
@@ -33,17 +34,22 @@ public class HealthBarBehavior : MonoBehaviour
     public void UpdateHealthBar(float health)
     {
         CurrentHealth = health;
-        UpdateAnimation();
+        HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
+
+    }
+    public void UpdateShieldBar(float shield)
+    {
+        CurrentShield = shield;
+        ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
+
     }
 
     public void UpdateMaxHealthBar(float maxHealth)
     {
         MaxHealth = maxHealth;
     }
-
-    public void UpdateAnimation()
+    public void UpdateMaxShieldBar(float maxHealth)
     {
-        HealthAnimator.SetFloat("CurrentHealth", CurrentHealth);
-        ShieldAnimator.SetFloat("CurrentShield", CurrentShield);
+        MaxHealth = maxHealth;
     }
 }

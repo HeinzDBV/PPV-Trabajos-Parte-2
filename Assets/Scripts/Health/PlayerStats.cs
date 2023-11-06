@@ -8,4 +8,5 @@ public class PlayerStats : ScriptableObject
     public float MaxHealth;
     public float MaxShield;
     public float Speed;
+    public int MaxAmmo;
 }
