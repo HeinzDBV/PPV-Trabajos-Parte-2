@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
         //SFX
 
         CurrentAmmo--;
+        GameObject particles = Instantiate(Stats.Particles, ShootPoint.position, ShootPoint.rotation);
         GameObject bullet = Instantiate(Stats.BulletPrefab, ShootPoint.position, ShootPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = ShootPoint.forward * Stats.BulletSpeed;
         bullet.GetComponent<Bullet>().Initialize(Stats.Damage, Stats.BulletSpeed, Stats.Range, gameObject);
