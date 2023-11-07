@@ -39,6 +39,8 @@ public class EnemyState
 
     public virtual void OnTriggerExit(Collider other) { }
 
+    public virtual void OnTriggerStay(Collider other) { }
+
     public virtual void AnimationStartTrigger() { }
 
     public virtual void AnimationActionTrigger() { }

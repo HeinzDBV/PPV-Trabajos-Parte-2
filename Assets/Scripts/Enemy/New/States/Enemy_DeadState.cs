@@ -12,8 +12,14 @@ public class Enemy_DeadState : EnemyState
     {
         base.Enter();
 
-        enemy.SetVelocity(new Vector3(0f, 0f, 0f));
-        //Play dead animation
-        Debug.Log("Dead");
+        enemy.SetVelocity(Vector3.zero);
+        enemy.Anim.SetTrigger("IsDead");
+    }
+
+    public override void AnimationFinishTrigger()
+    {
+        base.AnimationFinishTrigger();
+
+        GameObject.Destroy(enemy.gameObject);
     }
 }

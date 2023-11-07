@@ -14,14 +14,14 @@ public class Enemy_ChaseState : EnemyState
     {
         base.Enter();
 
-        enemy.SetVelocity(new Vector3(0f, 0f, 0f));
-        //Play chase animation
-        Debug.Log("Chase: " + enemy.name);
+        enemy.Anim.SetBool("IsWalking", true);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        enemy.Anim.SetBool("IsWalking", false);
     }
 
     public override void LogicUpdate()

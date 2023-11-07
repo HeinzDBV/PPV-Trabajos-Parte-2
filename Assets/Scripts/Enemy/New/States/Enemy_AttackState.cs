@@ -12,9 +12,8 @@ public class Enemy_AttackState : EnemyState
     {
         base.Enter();
 
-        enemy.SetVelocity(new Vector3(0f, 0f, 0f));
-        //Play attack animation
-        Debug.Log("Attack: " + enemy.name);
+        enemy.SetVelocity(Vector3.zero);
+        enemy.Anim.SetTrigger("IsAttacking");
     }
 
     public override void Exit()

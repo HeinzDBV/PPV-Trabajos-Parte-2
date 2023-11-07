@@ -12,9 +12,7 @@ public class Enemy_IdleState : EnemyState
     {
         base.Enter();
 
-        enemy.SetVelocity(new Vector3(0f, 0f, 0f));
-        //Play idle animation
-        Debug.Log("Idle: " + enemy.name);
+        enemy.SetVelocity(Vector3.zero);
     }
 
     public override void Exit()
