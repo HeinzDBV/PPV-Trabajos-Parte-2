@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float MovementSpeed = 3;
+    private float MovementSpeed = 4;
     [SerializeField]
     private float RotationSpeed = 2f;
 
@@ -75,9 +75,27 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
+    public void OnMove(InputAction.CallbackContext value)
+    {
+        var data = value.ReadValue<Vector2>();
+        direction = new Vector3(
+            data.x,
+            0f,
+            data.y
+        );
+    }
+
     private void OnFire(InputValue value)
     {
         if (value.isPressed)
+        {
+            myCamera.GetComponent<PlayerFire>().Fire();
+        }
+    }
+
+    public void OnFire(InputAction.CallbackContext value)
+    {
+        if (value.started)
         {
             myCamera.GetComponent<PlayerFire>().Fire();
         }
@@ -91,5 +109,92 @@ public class PlayerMovement : MonoBehaviour
             data.x, // rotacion horizontal (sobre eje Y)
             0f
         );
+    }
+
+    public void OnLook(InputAction.CallbackContext value)
+    {
+        var data = value.ReadValue<Vector2>();
+        rotation = new Vector3(
+            data.y,
+            data.x, // rotacion horizontal (sobre eje Y)
+            0f
+        );
+    }
+
+    private void OnReload(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myCamera.GetComponent<PlayerFire>().Reload();
+        }
+    }
+
+    public void OnReload(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            myCamera.GetComponent<PlayerFire>().Reload();
+        }
+    }
+
+    private void OnSwitchGun(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myCamera.GetComponent<PlayerFire>().SwitchGun();
+        }
+    }
+
+    public void OnSwitchGun(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            myCamera.GetComponent<PlayerFire>().SwitchGun();
+        }
+    }
+
+    private void OnInteract(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            GetComponentInChildren<PlayerInteractArea>().Interact();
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            GetComponentInChildren<PlayerInteractArea>().Interact();
+            Debug.Log("Interact");
+        }
+    }
+
+    private void OnUnequip(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            GetComponentInChildren<PlayerFire>().DropGun();
+        }
+    }
+
+    public void OnUnequip(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            GetComponentInChildren<PlayerFire>().DropGun();
+        }
+    }
+
+    public void OnRun(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            MovementSpeed = 8;
+        }
+        else if (value.canceled)
+        {
+            MovementSpeed = 4;
+        }
     }
 }
