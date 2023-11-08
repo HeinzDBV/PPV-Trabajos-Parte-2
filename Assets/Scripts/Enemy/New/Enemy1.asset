@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Enemy1
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  AttackDamage: 5
-  AttackRange: 10
-  AttackCooldown: 10
+  AttackDamage: 20
+  AttackRange: 20
+  AttackCooldown: 5
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
