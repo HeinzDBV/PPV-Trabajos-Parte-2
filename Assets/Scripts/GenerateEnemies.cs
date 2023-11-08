@@ -7,7 +7,7 @@ public class GenerateEnemies : MonoBehaviour
     public GameObject enemy;
     public GameObject enemy2;
 
-    [SerializeField] private int numberOfEnemies = 5;
+    [SerializeField] private int numberOfEnemies = 15;
     [SerializeField] private int xPos;
     [SerializeField] private int zPos;
     [SerializeField] private int enemyCount;
@@ -28,7 +28,7 @@ public class GenerateEnemies : MonoBehaviour
     {
         while (true)
         {
-            int numberOfEnemiesRandom = Random.Range(1, numberOfEnemies);
+            int numberOfEnemiesRandom = Random.Range(10, numberOfEnemies);
 
             for (int i = 0; i < numberOfEnemiesRandom; i++)
             {

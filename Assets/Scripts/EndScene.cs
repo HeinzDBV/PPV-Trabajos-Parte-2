@@ -11,6 +11,7 @@ public class EndScene : MonoBehaviour
 
     public void Restart()
     {
+        
         Time.timeScale = 1f;
         DeadScreen.SetActive(false);
         SceneManager.LoadScene(0);

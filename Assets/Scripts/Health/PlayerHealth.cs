@@ -102,8 +102,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
         Deadscreen.SetActive(true);
+        
         Debug.Log("Player died");
     }
 }
