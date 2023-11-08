@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float CurrentHealth;
     private float CurrentShield;
+    
+    [SerializeField]
+    private GameObject Deadscreen;
 
     #region Components
     public Animator Animator { get; private set;}
@@ -24,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
     public static event Action<float> OnMaxShieldChanged;
     #endregion
 
+    private void Awake() 
+    {
+        Deadscreen.SetActive(false);    
+    }
     void Start()
     {
         Animator = GetComponent<Animator>();
@@ -89,6 +96,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        Time.timeScale = 1f;
+        Deadscreen.SetActive(true);
         Debug.Log("Player died");
     }
 }
