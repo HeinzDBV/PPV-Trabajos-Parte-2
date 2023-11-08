@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private Transform myCamera;
 
+    public Animator animator;
+
     private void Awake() 
     {
         characterController = GetComponent<CharacterController>();   
@@ -65,15 +67,15 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
-    private void OnMove(InputValue value)
-    {
-        var data = value.Get<Vector2>();
-        direction = new Vector3(
-            data.x,
-            0f,
-            data.y
-        );
-    }
+    // private void OnMove(InputValue value)
+    // {
+    //     var data = value.Get<Vector2>();
+    //     direction = new Vector3(
+    //         data.x,
+    //         0f,
+    //         data.y
+    //     );
+    // }
 
     public void OnMove(InputAction.CallbackContext value)
     {
@@ -83,22 +85,34 @@ public class PlayerMovement : MonoBehaviour
             0f,
             data.y
         );
+        
+        if(value.performed)
+        animator.SetBool("Walk", true);
+        
+        if(value.canceled)
+        animator.SetBool("Walk", false);
+
+        
     }
 
-    private void OnFire(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            myCamera.GetComponent<PlayerFire>().Fire();
-        }
-    }
+    // private void OnFire(InputValue value)
+    // {
+    //     if (value.isPressed)
+    //     {
+    //         myCamera.GetComponent<PlayerFire>().Fire();
+    //     }
+    // }
 
     public void OnFire(InputAction.CallbackContext value)
     {
         if (value.started)
         {
+            animator.SetTrigger("Shoot");
             myCamera.GetComponent<PlayerFire>().Fire();
         }
+
+
+  
     }
 
     private void OnLook(InputValue value)

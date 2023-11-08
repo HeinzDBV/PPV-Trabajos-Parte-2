@@ -15,4 +15,5 @@ public class GunStats : ScriptableObject
     public float BulletSpeed;
     public GameObject Particles;
     public AudioClip ShootSound;
+    public GunType gunsType;
 }

@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     #region Components
     public Animator Animator { get; private set;}
+    public Animator Animator2;
     public PlayerStats playerStats;
     #endregion
     
@@ -42,7 +43,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        
+        Animator2.SetTrigger("Hit");
+
+
         if(CurrentShield > 0)
         {
             CurrentShield -= damage;
@@ -52,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         {
             CurrentHealth -= damage;
             OnHealthChanged?.Invoke(CurrentHealth);
+            Animator2.SetFloat("CurrentHealth", CurrentHealth);  
         }
 
 

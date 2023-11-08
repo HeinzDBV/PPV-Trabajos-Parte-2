@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,11 @@ public class Gun : MonoBehaviour
     public int CurrentAmmo { get; private set; }
     public int CurrentTotalAmmo { get; private set; }
     public GameObject ItemPrefab;
+    public static event Action<int> OnCurrentAmmoChanged;
+    public static event Action<int> OnCurrentMaxAmmo;
+    public static event Action<int> OnGunSelected;
 
-    public void Start()
+    public void Awake()
     {
         CurrentAmmo = Stats.MaxAmmo;
         CurrentTotalAmmo = Stats.TotalAmmo;
@@ -30,6 +34,7 @@ public class Gun : MonoBehaviour
         //SFX
 
         CurrentAmmo--;
+        OnCurrentAmmoChanged?.Invoke(CurrentAmmo);
         GameObject particles = Instantiate(Stats.Particles, ShootPoint.position, ShootPoint.rotation);
         GameObject bullet = Instantiate(Stats.BulletPrefab, ShootPoint.position, ShootPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = ShootPoint.forward * Stats.BulletSpeed;
@@ -59,5 +64,17 @@ public class Gun : MonoBehaviour
             CurrentAmmo += CurrentTotalAmmo;
             CurrentTotalAmmo = 0;
         }
+        OnCurrentAmmoChanged?.Invoke(CurrentAmmo);
+    }
+    
+    public void GunSelected()
+    {
+        OnCurrentAmmoChanged?.Invoke(CurrentAmmo);
+        OnCurrentMaxAmmo?.Invoke(Stats.MaxAmmo);
+    }
+    public void GunDeselected()
+    {
+        OnCurrentAmmoChanged?.Invoke(0);
+        OnCurrentMaxAmmo?.Invoke(0);
     }
 }

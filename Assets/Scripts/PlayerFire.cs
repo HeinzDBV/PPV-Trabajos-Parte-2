@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
@@ -10,6 +11,10 @@ public class PlayerFire : MonoBehaviour
     public int gunIndex;
     public GameObject PrimaryGunGO;
     public GameObject SecondaryGunGO;
+
+
+    [SerializeField]
+    public GunsUI gunsUI;
 
     private void Start() 
     {
@@ -63,22 +68,49 @@ public class PlayerFire : MonoBehaviour
         {
             SwitchToPrimaryGun();
         }
+
     }
 
     public void SwitchToPrimaryGun()
     {
+        if(PrimaryGun== null)
+        {
+            Gun?.GunDeselected();
+        }
         Gun = PrimaryGun;
         gunIndex = 0;
         PrimaryGunGO.SetActive(true);
         SecondaryGunGO.SetActive(false);
+        if(Gun!=null)
+        {
+            gunsUI.ShowGun(Gun.Stats.gunsType);
+            Gun.GunSelected();
+        }
+        else
+        {
+            gunsUI.ShowGun(GunType.NONE);
+        }
     }
 
     public void SwitchToSecondaryGun()
     {
+        if(SecondaryGun== null)
+        {
+            Gun?.GunDeselected();
+        }
         Gun = SecondaryGun;
         gunIndex = 1;
         PrimaryGunGO.SetActive(false);
         SecondaryGunGO.SetActive(true);
+        if(Gun!=null)
+        {
+            gunsUI.ShowGun(Gun.Stats.gunsType);
+            Gun.GunSelected();
+        }
+        else
+        {
+            gunsUI.ShowGun(GunType.NONE);
+        }
     }
 
     public void EquipGun(GameObject gunPrefab)
@@ -107,6 +139,7 @@ public class PlayerFire : MonoBehaviour
                 EquipSecondaryGun(gunPrefab);
             }
         }
+
     }
 
     public void EquipPrimaryGun(GameObject gunPrefab)
@@ -131,6 +164,7 @@ public class PlayerFire : MonoBehaviour
     {
         if (Gun != null)
         {
+            Gun.GunDeselected();
             Instantiate(Gun.ItemPrefab, transform.position, transform.rotation);
             if (gunIndex == 0)
             {
@@ -143,6 +177,7 @@ public class PlayerFire : MonoBehaviour
                 Destroy(SecondaryGunGO.transform.GetChild(0).gameObject);
             }
             Gun = null;
+            gunsUI.ShowGun(GunType.NONE);
         }
     }
 }

@@ -22,3 +22,4 @@ MonoBehaviour:
   BulletSpeed: 5
   Particles: {fileID: 2087078098418067712, guid: bc53a51a1226d9a4ea67067b1fd019cd, type: 3}
   ShootSound: {fileID: 0}
+  gunsType: 1
