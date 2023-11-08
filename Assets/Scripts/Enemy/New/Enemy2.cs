@@ -15,6 +15,7 @@ public class Enemy2 : Enemy
     #endregion
 
     public GameObject bulletPrefab;
+    public SoundManager soundManager;
 
     private void Awake() 
     {
@@ -84,7 +85,10 @@ public class Enemy2 : Enemy
 
     public override void TakeDamage(float damage)
     {
+        
+        
         CurrentHealth -= damage;
+
 
         if (CurrentHealth <= 0)
         {

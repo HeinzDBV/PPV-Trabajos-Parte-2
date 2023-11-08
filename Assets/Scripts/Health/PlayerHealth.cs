@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float CurrentHealth;
     private float CurrentShield;
+
     
     [SerializeField]
     private GameObject Deadscreen;
@@ -17,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     #region Components
     public Animator Animator { get; private set;}
     public Animator Animator2;
+    public SoundManager soundManager;
     public PlayerStats playerStats;
     #endregion
     
@@ -51,6 +54,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Animator2.SetTrigger("Hit");
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        int randomSFX = UnityEngine.Random.Range(5, 10);
+        soundManager.PlaySFX(randomSFX);
 
 
         if(CurrentShield > 0)
