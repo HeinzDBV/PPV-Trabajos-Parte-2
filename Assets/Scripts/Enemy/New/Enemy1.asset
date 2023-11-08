@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   AttackDamage: 5
-  AttackRange: 4
-  AttackCooldown: 2
+  AttackRange: 10
+  AttackCooldown: 10
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 64

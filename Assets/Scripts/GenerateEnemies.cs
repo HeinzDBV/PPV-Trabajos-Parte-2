@@ -47,7 +47,6 @@ public class GenerateEnemies : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            Debug.Log("Horda " + hordeCounter + " creada");
             hordeCounter += 1;
 
             if (hordeCounter > 0 && hordeTime > minHordeTime)

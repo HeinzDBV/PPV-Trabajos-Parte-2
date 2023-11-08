@@ -13,21 +13,22 @@ public class Enemy : MonoBehaviour, IDamageable
     public Enemy_HurtState HurtState { get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
     [SerializeField]
-    private EnemyData EnemyData;
+    protected EnemyData EnemyData;
     #endregion
 
     #region Components
     public Transform AttackPoint;
-    public Rigidbody RB { private set; get; }
-    public Animator Anim { private set; get; }
-    public NavMeshAgent Agent { private set; get; }
+    public Rigidbody RB { protected set; get; }
+    public Animator Anim { protected set; get; }
+    public NavMeshAgent Agent { protected set; get; }
     #endregion
 
     #region Variables
-    public float CurrentHealth { get; private set; }
+    public float CurrentHealth { get; protected set; }
     #endregion
 
     public Transform Target { get; set; }
+    protected bool isDead;
 
     private void Awake() 
     {
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable
         StateMachine.Initialize(IdleState);
 
         CurrentHealth = EnemyData.MaxHealth;
+        isDead = false;
     }
 
     private void Update() 
@@ -75,12 +77,12 @@ public class Enemy : MonoBehaviour, IDamageable
         StateMachine.CurrentState.OnTriggerStay(other);
     }
 
-    public void AnimationActionTrigger()
+    public virtual void AnimationActionTrigger()
     {
         StateMachine.CurrentState.AnimationActionTrigger();
     }
 
-    public void AnimationFinishTrigger()
+    public virtual void AnimationFinishTrigger()
     {
         StateMachine.CurrentState.AnimationFinishTrigger();
     }
@@ -90,7 +92,7 @@ public class Enemy : MonoBehaviour, IDamageable
         RB.velocity = velocity;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
 
@@ -104,8 +106,10 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
+        if (isDead) return;
+        isDead = true;
         StateMachine.ChangeState(DeadState);
     }
 }
