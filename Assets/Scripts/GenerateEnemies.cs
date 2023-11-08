@@ -43,7 +43,7 @@ public class GenerateEnemies : MonoBehaviour
                 {
                     Instantiate(enemy2, new Vector3(xPos, 0.4f, zPos), Quaternion.identity);
                 }
-                enemyCount += 1;
+                enemyCount += 5;
                 yield return new WaitForSeconds(0.1f);
             }
 
