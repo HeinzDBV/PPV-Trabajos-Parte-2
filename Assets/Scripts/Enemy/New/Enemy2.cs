@@ -6,18 +6,18 @@ using UnityEngine.AI;
 public class Enemy2 : Enemy
 {
     #region State Machine
-    public Enemy2_IdleState IdleState { get; private set; }
-    public Enemy2_ChaseState ChaseState { get; private set; }
-    public Enemy2_AttackState AttackState { get; private set; }
-    public Enemy2_DeadState DeadState { get; private set; }
-    public Enemy2_HurtState HurtState { get; private set; }
-    public EnemyStateMachine StateMachine { get; private set; }
+    public new Enemy2_IdleState IdleState { get; private set; }
+    public new Enemy2_ChaseState ChaseState { get; private set; }
+    public new Enemy2_AttackState AttackState { get; private set; }
+    public new Enemy2_DeadState DeadState { get; private set; }
+    public new Enemy2_HurtState HurtState { get; private set; }
+    public new EnemyStateMachine StateMachine { get; private set; }
     #endregion
 
     public GameObject bulletPrefab;
     public SoundManager soundManager;
 
-    private void Awake() 
+    public override void Awake() 
     {
         StateMachine = new EnemyStateMachine();
         IdleState = new Enemy2_IdleState(this, StateMachine, EnemyData);
@@ -31,7 +31,7 @@ public class Enemy2 : Enemy
         Agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Start() 
+    public override void Start() 
     {
         StateMachine.Initialize(IdleState);
 
@@ -39,27 +39,27 @@ public class Enemy2 : Enemy
         isDead = false;
     }
 
-    private void Update() 
+    public override void Update() 
     {
         StateMachine.CurrentState.LogicUpdate();
     }
 
-    private void FixedUpdate() 
+    public override void FixedUpdate() 
     {
         StateMachine.CurrentState.PhysicsUpdate();
     }
 
-    private void OnTriggerEnter(Collider other) 
+    public override void OnTriggerEnter(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerEnter(other);
     }
 
-    private void OnTriggerExit(Collider other) 
+    public override void OnTriggerExit(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerExit(other);
     }
 
-    private void OnTriggerStay(Collider other) 
+    public override void OnTriggerStay(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerStay(other);
     }
@@ -85,10 +85,7 @@ public class Enemy2 : Enemy
 
     public override void TakeDamage(float damage)
     {
-        
-        
         CurrentHealth -= damage;
-
 
         if (CurrentHealth <= 0)
         {

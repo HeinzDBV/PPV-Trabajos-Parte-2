@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public Transform Target { get; set; }
     protected bool isDead;
 
-    private void Awake() 
+    public virtual void Awake() 
     {
         StateMachine = new EnemyStateMachine();
         IdleState = new Enemy_IdleState(this, StateMachine, EnemyData);
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour, IDamageable
         Agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Start() 
+    public virtual void Start() 
     {
         StateMachine.Initialize(IdleState);
 
@@ -52,27 +52,27 @@ public class Enemy : MonoBehaviour, IDamageable
         isDead = false;
     }
 
-    private void Update() 
+    public virtual void Update() 
     {
         StateMachine.CurrentState.LogicUpdate();
     }
 
-    private void FixedUpdate() 
+    public virtual void FixedUpdate() 
     {
         StateMachine.CurrentState.PhysicsUpdate();
     }
 
-    public void OnTriggerEnter(Collider other) 
+    public virtual void OnTriggerEnter(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerEnter(other);
     }
 
-    public void OnTriggerExit(Collider other) 
+    public virtual void OnTriggerExit(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerExit(other);
     }
 
-    public void OnTriggerStay(Collider other) 
+    public virtual void OnTriggerStay(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerStay(other);
     }

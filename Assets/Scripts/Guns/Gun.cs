@@ -47,10 +47,8 @@ public class Gun : MonoBehaviour
         else if(Stats.gunsType == GunType.PISTOLA){
             soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
             soundManager.PlaySFX(3);
-            Debug.Log("PISTOLA");
         }
         else if(Stats.gunsType == GunType.RIFLE){
-            Debug.Log("RIFLE");
             soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
             soundManager.PlaySFX(4);
         }
@@ -58,7 +56,6 @@ public class Gun : MonoBehaviour
         CurrentAmmo--;
         OnCurrentAmmoChanged?.Invoke(CurrentAmmo);
         GameObject particles = Instantiate(Stats.Particles, ShootPoint.position, ShootPoint.rotation * Quaternion.Euler(0, 90, 90));
-        Debug.Log(ShootPoint.rotation);
         GameObject bullet = Instantiate(Stats.BulletPrefab, ShootPoint.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().velocity = Stats.BulletSpeed * ShootPoint.right;
         bullet.GetComponent<Bullet>().Initialize(Stats.Damage, Stats.BulletSpeed, Stats.Range, gameObject);

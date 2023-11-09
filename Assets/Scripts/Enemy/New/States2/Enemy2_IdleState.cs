@@ -37,4 +37,15 @@ public class Enemy2_IdleState : EnemyState
             stateMachine.ChangeState(enemy2.ChaseState);
         }
     }
+
+    public override void OnTriggerStay(Collider other)
+    {
+        base.OnTriggerStay(other);
+
+        if (other.CompareTag("Player"))
+        {
+            enemy.Target = other.transform;
+            stateMachine.ChangeState(enemy2.ChaseState);
+        }
+    }
 }

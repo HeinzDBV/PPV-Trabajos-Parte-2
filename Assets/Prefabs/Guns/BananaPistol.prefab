@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 633760519084248403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.39, y: 1.7, z: 0}
+  m_LocalPosition: {x: 1.48, y: 1.8, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stats: {fileID: 11400000, guid: 37d55b3285d155c4090e1a66f5d868dc, type: 2}
   ShootPoint: {fileID: 4172943357752942496}
+  soundManager: {fileID: 0}
   ItemPrefab: {fileID: 6371692123901212296, guid: ac174acfd1827264bb2ac09fed2fa535, type: 3}
 --- !u!4 &4155493591784214259 stripped
 Transform:

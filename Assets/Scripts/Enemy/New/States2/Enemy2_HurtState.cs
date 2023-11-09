@@ -21,6 +21,6 @@ public class Enemy2_HurtState : EnemyState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
-        enemy.StateMachine.ChangeState(enemy2.IdleState);
+        enemy2.StateMachine.ChangeState(enemy2.IdleState);
     }
 }
