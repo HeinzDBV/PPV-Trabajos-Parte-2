@@ -62,17 +62,17 @@ public class Enemy : MonoBehaviour, IDamageable
         StateMachine.CurrentState.PhysicsUpdate();
     }
 
-    private void OnTriggerEnter(Collider other) 
+    public void OnTriggerEnter(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerEnter(other);
     }
 
-    private void OnTriggerExit(Collider other) 
+    public void OnTriggerExit(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerExit(other);
     }
 
-    private void OnTriggerStay(Collider other) 
+    public void OnTriggerStay(Collider other) 
     {
         StateMachine.CurrentState.OnTriggerStay(other);
     }

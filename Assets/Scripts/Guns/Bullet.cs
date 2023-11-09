@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Bullet Start: " + TimeAlive);
         Destroy(gameObject, TimeAlive);
     }
 
@@ -27,16 +26,17 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject != Owner)
         {
-            Debug.Log(other.gameObject);
             if (other.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log(other.gameObject);
                 other.gameObject.GetComponent<IDamageable>().TakeDamage(Damage);
+                Destroy(gameObject);
             }
             else if (other.gameObject.CompareTag("Player"))
             {
                 other.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage);
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }

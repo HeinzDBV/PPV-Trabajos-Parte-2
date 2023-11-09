@@ -52,7 +52,6 @@ public class Enemy2_ChaseState : EnemyState
         );
         
         enemy2.Agent.destination = enemy2.Target.position;
-        Debug.Log( "estas en " + enemy2.Target.position);
     }
 
     public override void DoChecks()
