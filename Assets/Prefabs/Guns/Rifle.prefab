@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76c8286479b1cb34bb5fc6b37ac57f4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41890684
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76c8286479b1cb34bb5fc6b37ac57f4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -166,4 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stats: {fileID: 11400000, guid: 009dc4495531d3346a48784211212eb9, type: 2}
   ShootPoint: {fileID: 6543622378782878661}
+  soundManager: {fileID: 0}
   ItemPrefab: {fileID: 1345097980891991529, guid: f390635245e8fd846803f234ab52af5d, type: 3}
