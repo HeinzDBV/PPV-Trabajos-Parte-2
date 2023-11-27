@@ -42,12 +42,15 @@ public class PlayerMovement : MonoBehaviour
             Vector2 input = context.ReadValue<Vector2>();
             HorizontalInput = input.x;
             VerticalInput = input.y;
+            Debug.Log("se mueve");
+            SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
         }
         else if (context.canceled)
         {
             HorizontalInput = 0;
             VerticalInput = 0;
             MoveDirection = Vector3.zero;
+            Debug.Log("se para");
         }
     }
 

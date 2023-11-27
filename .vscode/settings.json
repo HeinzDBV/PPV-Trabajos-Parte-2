@@ -51,5 +51,10 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "PPV-Trabajos-Parte-2.sln"
+    "dotnet.defaultSolution": "PPV-Trabajos-Parte-2.sln",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1A3133",
+        "titleBar.activeBackground": "#244548",
+        "titleBar.activeForeground": "#F8FBFC"
+    }
 }
