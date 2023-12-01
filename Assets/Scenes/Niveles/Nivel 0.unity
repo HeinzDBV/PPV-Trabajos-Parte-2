@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 177239412}
-  m_IndirectSpecularColor: {r: 0.028435247, g: 0.03997567, b: 0.054963604, a: 1}
+  m_IndirectSpecularColor: {r: 0.028386857, g: 0.03998574, b: 0.05490222, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8943,8 +8943,7 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6101017614349529270, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
