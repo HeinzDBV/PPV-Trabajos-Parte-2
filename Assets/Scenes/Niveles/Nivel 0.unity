@@ -8895,7 +8895,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 907498491507648948, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 936311134926223278, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_CameraType
@@ -8907,7 +8907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8959,7 +8959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2712667154359984495, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3531177530243718892, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13341,7 +13341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225f6e19a254c934d9e3b82a516b6898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 0}
+  inkJSON: {fileID: 4900000, guid: 64f62d7ad7a83a64d9bac53b34c03706, type: 3}
   playerInput: {fileID: 783685059}
 --- !u!114 &210788333
 MonoBehaviour:
@@ -41563,7 +41563,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -194.34, y: 0}
-  m_SizeDelta: {x: 1415, y: 350}
+  m_SizeDelta: {x: 1415, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545472943
 MonoBehaviour:
@@ -139878,10 +139878,10 @@ RectTransform:
   - {fileID: 947636866}
   m_Father: {fileID: 1690114540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 225}
-  m_SizeDelta: {x: 1870, y: 410}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -340}
+  m_SizeDelta: {x: 1870, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2062514285
 MonoBehaviour:
@@ -145288,6 +145288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1457962972}
     m_Modifications:
+    - target: {fileID: 1692221592699428002, guid: d789ae7bb0bdd3545be5b153e67e605d, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 64f62d7ad7a83a64d9bac53b34c03706, type: 3}
     - target: {fileID: 1692221592699428002, guid: d789ae7bb0bdd3545be5b153e67e605d, type: 3}
       propertyPath: playerInput
       value: 

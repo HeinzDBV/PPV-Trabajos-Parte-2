@@ -25,7 +25,7 @@ public class DialogueTriggerNoNpc : MonoBehaviour
     }
     public void ExitDialogueRemote()
     {
-        DialogueManager.Instance.ExitDialogueMode();
+        StartCoroutine(DialogueManager.Instance.ExitDialogueMode());
         playerInput.SwitchCurrentActionMap("Playing");
     }
 }

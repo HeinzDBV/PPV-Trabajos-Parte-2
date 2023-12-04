@@ -10,7 +10,8 @@ public class PauseMenu : MonoBehaviour
     private float duration;
     public Transform CameraPlayer;
     public Transform target;
-    private bool ispaused = false;
+    [SerializeField] private PlayerInput playerInput;
+    public static bool ispaused = false;
 
 
     private void Awake() 
@@ -29,14 +30,15 @@ public class PauseMenu : MonoBehaviour
             print("UwU");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
-
             EnterPauseMenu(target);
+            playerInput.SwitchCurrentActionMap("UI");
         }
         else if (context.performed && ispaused == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
             ExitPauseMenu(target);
+            playerInput.SwitchCurrentActionMap("Playing");
         }
     }
     public void EnterPauseMenu(Transform target)
@@ -47,6 +49,5 @@ public class PauseMenu : MonoBehaviour
     public void ExitPauseMenu(Transform target)
     {
         ispaused = false;
-        CameraPlayer.transform.DOLookAt(new Vector3(0,0,0), duration);
     }
 }

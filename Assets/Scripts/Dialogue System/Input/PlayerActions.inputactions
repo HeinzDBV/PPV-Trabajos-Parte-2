@@ -196,7 +196,7 @@
                 {
                     "name": "",
                     "id": "b0139218-609c-4dc7-ada6-1478bc92d0ea",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
