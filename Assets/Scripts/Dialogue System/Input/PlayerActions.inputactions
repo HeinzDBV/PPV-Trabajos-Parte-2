@@ -2,7 +2,7 @@
     "name": "PlayerActions",
     "maps": [
         {
-            "name": "Player",
+            "name": "Playing",
             "id": "2c7befb6-ca36-4078-a467-17b2d48a104a",
             "actions": [
                 {
@@ -53,7 +53,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD [Keyboard]",
+                    "name": "WASD",
                     "id": "00ca640b-d935-4593-8157-c05846ea39b3",
                     "path": "Dpad",
                     "interactions": "",

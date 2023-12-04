@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
     private float duration;
+    public Transform CameraPlayer;
     public Transform target;
     private bool ispaused = false;
 
@@ -19,31 +20,33 @@ public class PauseMenu : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && ispaused == false)
+
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed && ispaused == false)
         {
             print("UwU");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
 
             EnterPauseMenu(target);
-            
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && ispaused == true)
+        else if (context.performed && ispaused == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
             ExitPauseMenu(target);
         }
     }
-
     public void EnterPauseMenu(Transform target)
     {
         ispaused = true;
-        transform.DOLookAt(target.position, duration);
+        CameraPlayer.transform.DOLookAt(target.position, duration);
     }
     public void ExitPauseMenu(Transform target)
     {
         ispaused = false;
-        transform.DOLookAt(new Vector3(0,0,0), duration);
+        CameraPlayer.transform.DOLookAt(new Vector3(0,0,0), duration);
     }
 }
