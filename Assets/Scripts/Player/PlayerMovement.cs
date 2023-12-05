@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public PlayerData playerData;
     public Transform orientation;
+    public Transform UI;
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
     public bool IsSprinting { get; private set; }
 
     public Vector3 MoveDirection { get; private set; }
+    public Vector3 MoveDirectionUI { get; private set; }
     public Rigidbody Rb { get; private set; }
 
     private void Awake()
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MoveDirection = orientation.forward * VerticalInput + orientation.right * HorizontalInput;
+        MoveDirectionUI = UI.forward * VerticalInput + orientation.right * HorizontalInput;
+        MoveDirectionUI.Normalize();
         MoveDirection.Normalize();
         Rb.velocity = MoveDirection * (IsSprinting ? playerData.SprintSpeed : playerData.MoveSpeed);
     }

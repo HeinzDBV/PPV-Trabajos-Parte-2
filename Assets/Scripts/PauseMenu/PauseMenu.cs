@@ -28,14 +28,14 @@ public class PauseMenu : MonoBehaviour
         if (context.performed && ispaused == false)
         {
             print("UwU");
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             EnterPauseMenu(target);
             playerInput.SwitchCurrentActionMap("UI");
         }
         else if (context.performed && ispaused == true)
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             ExitPauseMenu(target);
             playerInput.SwitchCurrentActionMap("Playing");
