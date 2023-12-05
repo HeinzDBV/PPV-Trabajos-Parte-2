@@ -4088,7 +4088,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3531177530243718892}
   m_Father: {fileID: 983571965562764343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2769686649324794327
@@ -5566,12 +5567,12 @@ Transform:
   m_GameObject: {fileID: 4200332251339474006}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19616088, y: -0.4126005, z: 0.09147132, w: 0.8848247}
-  m_LocalPosition: {x: -0.41, y: 0.09, z: 0.5}
+  m_LocalPosition: {x: -0.40999997, y: 0.09000001, z: 0.49999997}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5201342073125227211}
-  m_Father: {fileID: 983571965562764343}
+  m_Father: {fileID: 4844002943016851855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &481490248607174985
 MeshFilter:
@@ -5810,7 +5811,6 @@ Transform:
   - {fileID: 8758085457739191829}
   - {fileID: 4844002943016851855}
   - {fileID: 4246982903829159299}
-  - {fileID: 3531177530243718892}
   m_Father: {fileID: 1413792846801104744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8926808358530641180
@@ -5871,6 +5871,7 @@ MonoBehaviour:
   CameraPlayer: {fileID: 1615805053929373112}
   target: {fileID: 3531177530243718892}
   playerInput: {fileID: 0}
+  position: []
 --- !u!1 &4565752327261281307
 GameObject:
   m_ObjectHideFlags: 0

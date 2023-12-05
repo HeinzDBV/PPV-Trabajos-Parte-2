@@ -12,16 +12,28 @@ public class PauseMenu : MonoBehaviour
     public Transform target;
     [SerializeField] private PlayerInput playerInput;
     public static bool ispaused = false;
-
+    public List<Vector3> position = new();
+    public GameObject pauseMenu;
+    public GameObject optionsMenu;
+    public GameObject ExitConfirm;
 
     private void Awake() 
     {
         ispaused = false; 
     }
-
-    private void Update() 
+    private void FixedUpdate() 
     {
-
+        if(PauseMenu.ispaused == false)
+        {
+            if(position.Count < 2)
+            {
+                position.Add(CameraPlayer.position);
+            }
+            else
+            {
+                position.RemoveAt(0);
+            }
+        }
     }
     public void OnPause(InputAction.CallbackContext context)
     {
@@ -45,9 +57,14 @@ public class PauseMenu : MonoBehaviour
     {
         ispaused = true;
         CameraPlayer.transform.DOLookAt(target.position, duration);
+        pauseMenu.SetActive(true);
     }
     public void ExitPauseMenu(Transform target)
     {
+        duration = 0.1f;
+        Vector3 pos = CameraPlayer.position;
+        pos = position[0];
+        CameraPlayer.transform.DOLookAt(pos, duration);
         ispaused = false;
     }
 }
