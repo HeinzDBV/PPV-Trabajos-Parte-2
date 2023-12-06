@@ -4,7 +4,8 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private Animator portraitAnimator;
     [SerializeField] private Animator layoutAnimatour;
+
+    [SerializeField]private PlayerInput playerInput;
+
+    [SerializeField] private TextMeshProUGUI MissionText;
 
     [Header("Text Params")]
     [SerializeField] private float typingSpeed;
@@ -42,6 +47,8 @@ public class DialogueManager : MonoBehaviour
     private AudioSource mAudioSource;
 
     [HideInInspector] public static bool decision = false;
+    [HideInInspector] public static string mission;
+    [HideInInspector] public static string body;
 
     [Header("Ink Story")]
     [HideInInspector] public Story currentStory;
@@ -63,6 +70,8 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string AUDIO_TAG = "audio";
     private const string DECISION_TAG = "decision";
+    private const string MISSION_TAG = "mission";
+    private const string BODY_TAG = "body";
 
     #endregion
 
@@ -197,8 +206,6 @@ public class DialogueManager : MonoBehaviour
         //Hacemos que el objetod e Variables empiece a escuchar la historia dle JSON
         dialogueVariables.StartListening(currentStory);
 
-        //Activamos el Binding para estar atentos a cualquier Llamada a una Funcion Externa (desde Ink)
-        inkExternalFunctions.Bind(currentStory);
 
         //Asignamos valores por defecto y retornamos a la ANimacion original
         displayNameText.text = "???";
@@ -220,8 +227,6 @@ public class DialogueManager : MonoBehaviour
         //Hacemos que el objetod e Variables DEJE DE a escuchar la historia del JSON
         dialogueVariables.StopListening(currentStory);
 
-        //Hacemos el Unbinding del Ink actual para ya no considerar Funciones Externas
-        inkExternalFunctions.Unbind(currentStory);
 
         //Desactivamos el dialogo por completo
         dialogueIsPlaying = false;
@@ -230,6 +235,8 @@ public class DialogueManager : MonoBehaviour
 
         //Retornamos el Audio de dialogo al Default
         SetCurrentAudioInfo(defaultAudioInfo.id);
+
+        playerInput.SwitchCurrentActionMap("Playing");
     }
 
     //---------------------------------------------------------------
@@ -355,16 +362,25 @@ public class DialogueManager : MonoBehaviour
                 case DECISION_TAG:
                     //Configuramos la Variable estatica para dar un final u otro.
                     // True = Bueno; False = Malo
-                    if(tagValue == "false")
+                        if(tagValue == "false")
+                        {
+                            decision = false;
+                        }
+                        else if(tagValue == "true")
+                        {
+                            decision = true;
+                        }
+                    break;
+                case MISSION_TAG:
                     {
-                        decision = false;
-                    }
-                    else if(tagValue == "true")
-                    {
-                        decision = true;
+                        MissionText.SetText(tagValue);
                     }
                     break;
-
+                case BODY_TAG:
+                    {
+                        body = tagValue;
+                    break;
+                    }
                 default:
                     Debug.Log("La etiqueta presenta algunos errores");
                     break;

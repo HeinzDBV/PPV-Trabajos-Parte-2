@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public void MainMenuChrg()
+    {
+        SceneManager.LoadScene("Pre-Charge");
+    }
     public void Lev0Chrg()
     {
         SceneManager.LoadScene("Nivel 0");
@@ -24,6 +28,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel 3");
     }
+    public void Lev4Chrg()
+    {
+        SceneManager.LoadScene("Nivel 4");
+    }
     
     public void Levn1Chrg()
     {
@@ -37,6 +45,18 @@ public class SceneLoader : MonoBehaviour
     public void Levn3Chrg()
     {
         SceneManager.LoadScene("Nivel -3");
+    }
+    public void Levn4Chrg()
+    {
+        SceneManager.LoadScene("Nivel -4");
+    }
+    public void GoodEndingChrg()
+    {
+        SceneManager.LoadScene("Final Bueno");
+    }
+    public void BadEndingChrg()
+    {
+        SceneManager.LoadScene("Final Malo");
     }
     public void Exit()
     {

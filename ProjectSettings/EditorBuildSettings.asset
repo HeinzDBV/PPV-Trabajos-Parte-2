@@ -41,5 +41,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Niveles/Nivel -4.unity
     guid: c5492fa4f96a6734eb050f8bcbbd3e8f
+  - enabled: 1
+    path: Assets/Scenes/Endings/Final Bueno.unity
+    guid: 11f98f25123475d45ad1ea0922d2f52d
+  - enabled: 1
+    path: Assets/Scenes/Endings/Final Malo.unity
+    guid: 0f1842881a74b3241abf1402747aa27b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ea68e328b9896345b249167d5c7c22b, type: 2}
