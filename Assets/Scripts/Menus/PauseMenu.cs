@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private float duration;
     public Transform CameraPlayer;
+    public Transform Tablilla;
     public Transform target;
     [SerializeField] private PlayerInput playerInput;
     public static bool ispaused = false;
@@ -20,11 +21,28 @@ public class PauseMenu : MonoBehaviour
     private void Awake() 
     {
         ispaused = false; 
+
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        ExitConfirm.SetActive(false);
+        
+        //IF reconocer Mando para que seleccione automaticamente las opciones 
     }
+
+    private void Update() 
+    {
+        if(PauseMenu.ispaused == false)
+        {
+            //Tablilla.position = CameraPlayer.position;
+            //Tablilla.rotation *= CameraPlayer.rotation;
+        }      
+    }
+
     private void FixedUpdate() 
     {
         if(PauseMenu.ispaused == false)
         {
+            
             if(position.Count < 2)
             {
                 position.Add(CameraPlayer.position);
@@ -59,12 +77,39 @@ public class PauseMenu : MonoBehaviour
         CameraPlayer.transform.DOLookAt(target.position, duration);
         pauseMenu.SetActive(true);
     }
+
+    public void EnterOptions()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void QuitOptions()
+    {
+        pauseMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
+    public void EnterExitPauseConfirmation()
+    {
+        pauseMenu.SetActive(false);
+        ExitConfirm.SetActive(true);
+    }
+    public void QuitExitPauseConfirmation()
+    {
+        pauseMenu.SetActive(true);
+        ExitConfirm.SetActive(false);
+    }
+
     public void ExitPauseMenu(Transform target)
     {
-        duration = 0.1f;
+        duration = 0.5f;
         Vector3 pos = CameraPlayer.position;
         pos = position[0];
         CameraPlayer.transform.DOLookAt(pos, duration);
         ispaused = false;
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        ExitConfirm.SetActive(false);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
     private bool playerInRange;
+    [SerializeField] private PlayerInput playerInput;
 
     //------------------------------------------------------
 
@@ -36,7 +38,10 @@ public class DialogueTrigger : MonoBehaviour
             if (InputManager.GetInstance().GetInteractPressed())
             {
                 //Por ahora, mostramos el Texto del JSON
+                Cursor.lockState = CursorLockMode.Locked;
+                playerInput.SwitchCurrentActionMap("Dialogue");
                 DialogueManager.Instance.EnterDialogueMode(inkJSON);
+            
             }
         }
         else visualCue.SetActive(false);
