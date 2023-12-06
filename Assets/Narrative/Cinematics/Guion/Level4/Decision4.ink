@@ -1,8 +1,8 @@
 INCLUDE ../../../globals.ink
 { 
-- cuerpo == 0 : -> Main 
-- cuerpo == 1: -> PostA
-- cuerpo == 2: -> PostB
+- laberinto == 0 : -> Main 
+- laberinto == 1: -> PostA
+- laberinto == 2: -> PostB
 }
 
 
