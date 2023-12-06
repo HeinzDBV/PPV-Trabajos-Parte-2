@@ -36,8 +36,7 @@ public class ChaseState : EnemyState
         if (Vector3.Distance(enemy.transform.position, enemy.Player.transform.position) <= enemyData.AttackRange && !enemy.PlayerMovement.IsHidden)
         {
             enemy.Stop();
-            enemy.Animator.SetBool("isScreaming", true);
-            Debug.Log("JUMPSCARE");
+            enemy.defeatByMonster.ChangeLevel();
         }
         else if (enemy.NavMeshAgent.remainingDistance <= enemy.NavMeshAgent.stoppingDistance)
         {

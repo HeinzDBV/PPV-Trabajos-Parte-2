@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             FloorTag = hit.collider.tag;
-            Debug.Log("Estás pisando" + FloorTag);
+            //Debug.Log("Estás pisando" + FloorTag);
         }
         
     }

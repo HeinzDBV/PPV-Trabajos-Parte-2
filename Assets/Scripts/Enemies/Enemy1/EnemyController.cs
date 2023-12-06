@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
     public Vector3 PlayerLastPosition { get; set; }
     public GameObject Player { get; set; }
     public PlayerMovement PlayerMovement { get; set; }
+    public DefeatByMonster defeatByMonster;
 
     #endregion
 
@@ -49,6 +50,8 @@ public class EnemyController : MonoBehaviour
         Player = GameObject.Find("Player");
         PlayerMovement = Player.GetComponent<PlayerMovement>();
         Animator = GetComponentInChildren<Animator>();
+
+        defeatByMonster = GetComponent<DefeatByMonster>();
     }
 
     void Start()

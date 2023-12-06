@@ -16,46 +16,50 @@ public class DefeatByMonster : MonoBehaviour
         playerCatched = false;
     }
 
-    private void Update() 
+    public void ChangeLevel()
     {
-        if(playerCatched == true && CurrentScene.name == "Nivel 0")
-        {
-            SceneManager.LoadScene("Nivel -1");
-            
-        }
-        else if(playerCatched == true && CurrentScene.name == "Nivel 1")
+        CurrentScene = SceneManager.GetActiveScene();
+
+        if(CurrentScene.name == "Nivel 0")
         {
             SceneManager.LoadScene("Nivel -1");
         }
-        else if(playerCatched == true && CurrentScene.name == "Nivel 2")
+        else if(CurrentScene.name == "Nivel 1")
+        {
+            SceneManager.LoadScene("Nivel -1");
+        }
+        else if(CurrentScene.name == "Nivel 2")
         {
             SceneManager.LoadScene("Nivel -2");
         }
-        else if(playerCatched == true && CurrentScene.name == "Nivel 3")
+        else if(CurrentScene.name == "Nivel 3")
         {
             SceneManager.LoadScene("Nivel -3");
         }
-        else if(playerCatched == true && CurrentScene.name == "Nivel 4")
+        else if(CurrentScene.name == "Nivel 4")
         {
             SceneManager.LoadScene("Nivel -4");
         }
-        else if(playerCatched == true && CurrentScene.name == "Nivel -1")
+        else if(CurrentScene.name == "Nivel -1")
         {
             SceneManager.LoadScene("Nivel -2");
         }
-        else if(playerCatched == true && CurrentScene.name == "Nivel -2")
+        else if(CurrentScene.name == "Nivel -2")
         {
             SceneManager.LoadScene("Nivel -3");
         }            
-        else if(playerCatched == true && CurrentScene.name == "Nivel -3")
+        else if(CurrentScene.name == "Nivel -3")
         {
             SceneManager.LoadScene("Nivel -4");
         }  
-        else if(playerCatched == true && CurrentScene.name == "Nivel -4")
+        else if(CurrentScene.name == "Nivel -4")
         {
             SceneManager.LoadScene("Final Malo");
         }
-                                       
+        else
+        {
+            Debug.Log("MUERTO");
+        }                         
     }
 
     private void OnTriggerEnter(Collider collision)
