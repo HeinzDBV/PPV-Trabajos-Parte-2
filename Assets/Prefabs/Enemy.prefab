@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7278618784776391298}
   - component: {fileID: 3446361494928449135}
   - component: {fileID: 6013299836475464097}
+  - component: {fileID: 2435946176958484146}
   - component: {fileID: 6419807337989913001}
   - component: {fileID: 7830542198616732993}
   m_Layer: 11
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526187485817053054}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 94.42, y: 1.05, z: 67.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -137,6 +138,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &2435946176958484146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526187485817053054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e583998ae6cb8a4fae0f8b041963c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6419807337989913001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +167,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  defeatByMonster: {fileID: 0}
 --- !u!95 &7830542198616732993
 Animator:
   serializedVersion: 5
