@@ -11,6 +11,7 @@ TagManager:
   - Deadground
   - Enemy
   - Deadtrigger
+  - GameMusic
   layers:
   - Default
   - TransparentFX
