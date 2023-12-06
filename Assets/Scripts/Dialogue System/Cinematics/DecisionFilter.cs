@@ -8,12 +8,12 @@ public class DecisionFilter : MonoBehaviour
     [SerializeField] private string Good;
     [SerializeField] private string Bad;
     //private Collider extCollider;
-    public static bool controlCheck;
+    // public static bool controlCheck;
     private bool playerInRange = false;
 
     private void Awake() 
     {
-        controlCheck = false;
+        // controlCheck = false;
     }
     private void Start() 
     {
@@ -22,8 +22,15 @@ public class DecisionFilter : MonoBehaviour
     }
     private void Update() 
     {
-        //controlDoor();
-        MakeitBe();
+
+        if(DialogueManager.decision == true && playerInRange == true)
+        {
+            SceneManager.LoadScene(Good);
+        }
+        else if(DialogueManager.decision == false && playerInRange == true)
+        {
+            SceneManager.LoadScene(Bad);
+        }
     }
 
 
@@ -42,14 +49,7 @@ public class DecisionFilter : MonoBehaviour
 
     public void MakeitBe()
     {
-        if(DialogueManager.decision == true && playerInRange == true)
-        {
-            SceneManager.LoadScene(Good);
-        }
-        else if(DialogueManager.decision == false && playerInRange == true)
-        {
-            SceneManager.LoadScene(Bad);
-        }
+
     }
     private void OnTriggerEnter(Collider collision)
     {

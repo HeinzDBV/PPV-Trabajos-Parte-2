@@ -370,6 +370,7 @@ public class DialogueManager : MonoBehaviour
                         {
                             decision = true;
                         }
+                        print(decision);
                     break;
                 case MISSION_TAG:
                     {
@@ -379,6 +380,7 @@ public class DialogueManager : MonoBehaviour
                 case BODY_TAG:
                     {
                         body = tagValue;
+                        print(tagValue);
                     break;
                     }
                 default:

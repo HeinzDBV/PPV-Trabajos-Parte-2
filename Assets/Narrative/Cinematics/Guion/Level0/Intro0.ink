@@ -8,7 +8,7 @@ Suddenly, a flash appears and...
 ->Main
 
 ===Main===
-#portrait:Ez_normal #layout: Left
+#speaker:Ezequiel #portrait:Ez_normal #layout: Left
 Whe... where am i?
 I... where... where is my boat. I remember the boat. It was dark, but i had my light...
 My light... I have to find it.
