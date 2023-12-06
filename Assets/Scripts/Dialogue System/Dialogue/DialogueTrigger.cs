@@ -45,13 +45,13 @@ public class DialogueTrigger : MonoBehaviour
 
     //------------------------------------------------------
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         //Si el Objeto colisionado tiene la etiqueta de PLAYER -> Activamos Flag
         playerInRange = collision.gameObject.CompareTag("Player") ? true : false;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
         //Si el Objeto colisionado tiene la etiqueta de PLAYER -> Desactivamos flag
         playerInRange = collision.gameObject.CompareTag("Player") ? false : true;

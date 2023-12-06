@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["\n","#","^speaker:Ezequiel","/#","^¿Do... donde estoy?","\n","^Lo último que recuerdo es...","\n","^Oh no... voy tarde.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"pokemon_name"},"str","^","/str",{"VAR=":"question"},"str","^","/str",{"VAR=":"answer"},"/ev","end",null],"#f":1}],"listDefs":{}}

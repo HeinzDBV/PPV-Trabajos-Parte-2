@@ -19,12 +19,15 @@ public class PlayerCamera : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        Vector2 look = context.ReadValue<Vector2>();
-        yRotation += look.x * playerData.SensY * Time.deltaTime;
-        xRotation -= look.y * playerData.SensX * Time.deltaTime;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        if (PauseMenu.ispaused == false)
+        {
+            Vector2 look = context.ReadValue<Vector2>();
+            yRotation += look.x * playerData.SensY * Time.deltaTime;
+            xRotation -= look.y * playerData.SensX * Time.deltaTime;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        orientation.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+            transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+            orientation.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
     }
 }

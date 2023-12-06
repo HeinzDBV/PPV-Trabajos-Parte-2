@@ -41,8 +41,10 @@ public class DialogueManager : MonoBehaviour
 
     private AudioSource mAudioSource;
 
+    [HideInInspector] public static bool decision = false;
+
     [Header("Ink Story")]
-    private Story currentStory;
+    [HideInInspector] public Story currentStory;
 
     [Header("Dialogue Flag")]
     [HideInInspector] public bool dialogueIsPlaying;
@@ -60,6 +62,7 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string AUDIO_TAG = "audio";
+    private const string DECISION_TAG = "decision";
 
     #endregion
 
@@ -105,7 +108,7 @@ public class DialogueManager : MonoBehaviour
         //Inicializamos indice del array en 0
         int index = 0;
 
-        //Por cada opción en la lista...
+        //Por cada opciï¿½n en la lista...
         foreach (GameObject choice in btnsChoices)
         {
             //Obtenemos el TextMeshPro de su objeto hijo
@@ -170,7 +173,7 @@ public class DialogueManager : MonoBehaviour
             //Retornamos inmediatamente 
             return;
 
-        //Caso contrario, si se está reproduciendo diálogo...
+        //Caso contrario, si se estï¿½ reproduciendo diï¿½logo...
 
         //Si se oprime el boton para continuar con el Dialogo
         if (canContinueToNextLine && InputManager.GetInstance().GetSubmitPressed())
@@ -208,7 +211,7 @@ public class DialogueManager : MonoBehaviour
 
     //---------------------------------------------------------------
     // Funcion (corutina) para salir del modo de dialogo
-    private IEnumerator ExitDialogueMode()
+    public IEnumerator ExitDialogueMode()
     {
         //Utilizamos un breve retraso en este caso, dado que
         //el boton de CONTINUAR es el msimo que el de SALTAR
@@ -231,7 +234,7 @@ public class DialogueManager : MonoBehaviour
 
     //---------------------------------------------------------------
 
-    private void ContinueStory()
+    public void ContinueStory()
     {
         //Corroboramos si podemos continuar la historia (JSON con texto)
         if (currentStory.canContinue)
@@ -283,7 +286,7 @@ public class DialogueManager : MonoBehaviour
         //que se tienen disponibles...
         if (currentDialogueChoices.Count > btnsChoices.Length)
         {
-            Debug.LogError("La historia presenta más opciones de las esperadas. Se recibieron: " + currentDialogueChoices.Count);
+            Debug.LogError("La historia presenta mï¿½s opciones de las esperadas. Se recibieron: " + currentDialogueChoices.Count);
         }
 
         //Inicializamos un indice
@@ -349,6 +352,18 @@ public class DialogueManager : MonoBehaviour
                     //Actualizamos el Audio utilizado por el dialogo
                     SetCurrentAudioInfo(tagValue);
                     break;
+                case DECISION_TAG:
+                    //Configuramos la Variable estatica para dar un final u otro.
+                    // True = Bueno; False = Malo
+                    if(tagValue == "false")
+                    {
+                        decision = false;
+                    }
+                    else if(tagValue == "true")
+                    {
+                        decision = true;
+                    }
+                    break;
 
                 default:
                     Debug.Log("La etiqueta presenta algunos errores");
@@ -392,7 +407,7 @@ public class DialogueManager : MonoBehaviour
 
             //Revisamos si se esta introducinedo texto Perosnalizado
             //Verificamos si el caracter corresponde a un < (Inicio de personalizacion)
-            //o si el Flag ESTÁ ACTIVADO
+            //o si el Flag ESTï¿½ ACTIVADO
             if (c == '<' || isAddingRichTextTag)
             {
                 //Activamos el Flag
@@ -448,7 +463,7 @@ public class DialogueManager : MonoBehaviour
     //FUNCION: hacer una Eleccion en el dialogo
     public void MakeChoice(int choiceIndex)
     {
-        //Si ya podemos cambiar de linea (acabó de escribirse)...
+        //Si ya podemos cambiar de linea (acabï¿½ de escribirse)...
         if (canContinueToNextLine)
         {
             //Elegimos a partir del INDICE de la opcion
@@ -480,7 +495,7 @@ public class DialogueManager : MonoBehaviour
                 mAudioSource.Stop();
             }
 
-            //Modificamos el Pitch de forma aleatoria <-- Ligera variación
+            //Modificamos el Pitch de forma aleatoria <-- Ligera variaciï¿½n
             mAudioSource.pitch = Random.Range(minPitch,maxPitch);
 
             //Hacemos que se reproduzca el sonido de Tipeo que haymos asignado
