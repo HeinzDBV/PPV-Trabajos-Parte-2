@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: EnemyData
   m_EditorClassIdentifier: 
   TimeToRotate: 2
-  SpeedWalk: 6
-  SpeedRun: 12
+  SpeedWalk: 5
+  SpeedRun: 9
   ViewRadius: 15
   ViewRange: 110
   AttackRange: 2
   PatrolWaitTime: 2
+  ChaseWaitTime: 2
   TargetMask:
     serializedVersion: 2
     m_Bits: 64

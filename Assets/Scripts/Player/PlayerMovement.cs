@@ -18,12 +18,15 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 MoveDirectionUI { get; private set; }
     public Rigidbody Rb { get; private set; }
 
+    public bool IsHidden { get; set; }
+
 
     private void Awake()
     {
         SoundManager.Initialize();
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
+        IsHidden = false;
 
         HorizontalInput = 0;
         VerticalInput = 0;
@@ -37,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ApplyGravity();
+        
     }
 
     void FixedUpdate()
@@ -56,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             Vector2 input = context.ReadValue<Vector2>();
             HorizontalInput = input.x;
             VerticalInput = input.y;
-            Debug.Log("se mueve");
+            //Debug.Log("se mueve");
             
             //Edgar
             // verifica tipo de piso y reproducir sonido si es madera o concreto
@@ -73,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("No hay piso");
+                //Debug.Log("No hay piso");
             }
             
 
@@ -83,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
             HorizontalInput = 0;
             VerticalInput = 0;
             MoveDirection = Vector3.zero;
-            Debug.Log("se para");
         }
     }
 
