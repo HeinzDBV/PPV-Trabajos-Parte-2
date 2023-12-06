@@ -12,6 +12,9 @@ TagManager:
   - Enemy
   - Deadtrigger
   - GameMusic
+  - Wood
+  - Muelle
+  - Concreto
   layers:
   - Default
   - TransparentFX

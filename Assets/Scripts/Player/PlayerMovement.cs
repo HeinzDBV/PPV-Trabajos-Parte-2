@@ -11,13 +11,16 @@ public class PlayerMovement : MonoBehaviour
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
     public bool IsSprinting { get; private set; }
+    
 
     public Vector3 MoveDirection { get; private set; }
     public Vector3 MoveDirectionUI { get; private set; }
     public Rigidbody Rb { get; private set; }
 
+
     private void Awake()
     {
+        SoundManager.Initialize();
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
 
@@ -47,7 +50,26 @@ public class PlayerMovement : MonoBehaviour
             HorizontalInput = input.x;
             VerticalInput = input.y;
             Debug.Log("se mueve");
-            SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
+            
+            //Edgar
+            // verifica tipo de piso y reproducir sonido si es madera o concreto
+            if( Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 1.5f) )
+            {
+                if (hit.collider.CompareTag("Muelle"))
+                {
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
+                }
+                else if (hit.collider.CompareTag("Concreto"))
+                {
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerWalkConcrete);
+                }
+            }
+            else
+            {
+                Debug.Log("No hay piso");
+            }
+            
+
         }
         else if (context.canceled)
         {
