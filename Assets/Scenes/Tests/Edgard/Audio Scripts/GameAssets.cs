@@ -6,20 +6,25 @@ using UnityEngine;
 public class GameAssets : MonoBehaviour
 {
     private static GameAssets _i;
-    
-    public static GameAssets i{
-        get{
-            if(_i == null) _i = Instantiate(Resources.Load<GameAssets>("GameAssets"));
-            Debug.Log("Cargando audios");
+
+    // Esta función estática se encarga de cargar el recurso GameAssets si aún no se ha cargado
+    public static GameAssets i {
+        get {
+            if (_i == null) {
+                _i = Resources.Load<GameAssets>("GameAssets");
+                if (_i == null) {
+                    Debug.LogError("GameAssets no encontrado en la carpeta Resources.");
+                }
+            }
             return _i;
         }
     }
 
     public SoundAudioClip[] soundAudioClipArray;
+
     [System.Serializable]
     public class SoundAudioClip {
         public SoundManager.Sound sound;
         public AudioClip audioClip;
     }
-
 }

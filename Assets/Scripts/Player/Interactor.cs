@@ -34,6 +34,7 @@ public class Interactor : MonoBehaviour
     {
         if (context.performed)
         {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerObjectInteraction);
             Debug.Log("Se presionó la E");
             GetClosestInteractable();
             Interactable?.Interact();
