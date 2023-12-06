@@ -42,13 +42,9 @@ We have to eat.
 ->END
 
 ===PostA===
-#portrait:Ez_angry #layout: Left
-I promised it...
-#portrait:Ez_sad
-But...
 #portrait:Ez_normal
-We have to eat.
-#mission: Enter the Boat #body 
+I won't, just 
+
 ->END
 
 ===PostB===
