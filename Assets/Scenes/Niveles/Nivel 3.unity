@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.09554112, g: 0.12033747, b: 0.1792453, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: fec5b1c5153ba4a5480ffecd6d7dda43, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43695086, g: 0.48462397, b: 0.56488377, a: 1}
+  m_IndirectSpecularColor: {r: 0.028434763, g: 0.039974574, b: 0.054961026, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8927c747dd28f32459ae010ea84bdb47, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3026,6 +3026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 64f62d7ad7a83a64d9bac53b34c03706, type: 3}
   playerInput: {fileID: 2134079750}
+  inputActionReference: {fileID: 0}
 --- !u!320 &904877463
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4266,15 +4267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.588593
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 11.588593
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.588593
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4282,7 +4283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.1
+      value: 22.42
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4970,6 +4971,8 @@ MonoBehaviour:
   displayNameText: {fileID: 1884836383}
   portraitAnimator: {fileID: 735587264}
   layoutAnimatour: {fileID: 752962251}
+  playerInput: {fileID: 0}
+  MissionText: {fileID: 0}
   typingSpeed: 0.04
   loadGlobalsJSON: {fileID: 4900000, guid: b59bf4a9338c1d946b28550030f80764, type: 3}
   defaultAudioInfo: {fileID: 11400000, guid: 47f69281e2d571c44b4e001f48d406e8, type: 2}
@@ -6949,12 +6952,12 @@ SceneRoots:
   - {fileID: 1921121443}
   - {fileID: 567826201}
   - {fileID: 130671148}
-  - {fileID: 874407680}
-  - {fileID: 1478545409}
   - {fileID: 1268978997}
   - {fileID: 774254340}
-  - {fileID: 2094418871}
+  - {fileID: 874407680}
+  - {fileID: 1478545409}
   - {fileID: 781122417}
+  - {fileID: 2094418871}
   - {fileID: 2005953237}
   - {fileID: 2015944739}
   - {fileID: 2111899019}
