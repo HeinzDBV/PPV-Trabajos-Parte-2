@@ -20,6 +20,8 @@ public static class SoundManager{
         soundTimerDictionary = new Dictionary<Sound, float>();
         soundTimerDictionary[Sound.PlayerWalkWood] = 0f;
         soundTimerDictionary[Sound.PlayerWalkConcrete] = 0f;
+        Debug.Log("Audios cargados");
+
     }
 
     
@@ -29,8 +31,13 @@ public static class SoundManager{
             GameObject soundGameObject = new GameObject("Sound");
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
             audioSource.PlayOneShot(GetAudioClip(sound));
-           //Object.Destroy(soundGameObject, audioSource.clip.length);
         }
+    }
+
+    public static void StopSound (Sound sound){
+        GameObject soundGameObject = new GameObject("Sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.Stop();
     }
 
     private static bool CanPlaySound(Sound sound){
@@ -72,6 +79,7 @@ public static class SoundManager{
                 return soundAudioClip.audioClip;
             }
         }
+
         Debug.LogError("Sound " + sound + " not found!");
         return null;
     }

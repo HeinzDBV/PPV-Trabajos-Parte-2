@@ -119449,6 +119449,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8369296996007425974, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
+      propertyPath: m_TagString
+      value: Muelle
+      objectReference: {fileID: 0}
+    - target: {fileID: -5359628665997792591, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
+      propertyPath: m_TagString
+      value: Muelle
+      objectReference: {fileID: 0}
     - target: {fileID: -4420282864522788655, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -119463,12 +119471,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5f7463483ad86c7479afcafcf1da47ec, type: 2}
     - target: {fileID: 919132149155446097, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
       propertyPath: m_Name
-      value: Sea Of Thieves Dock
+      value: SeaOfThievesDock
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
+      propertyPath: m_TagString
+      value: Muelle
       objectReference: {fileID: 0}
     - target: {fileID: 2109186018739750691, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5f7463483ad86c7479afcafcf1da47ec, type: 2}
+    - target: {fileID: 5485251536063963294, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
+      propertyPath: m_TagString
+      value: Muelle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458393126414508813, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
+      propertyPath: m_TagString
+      value: Muelle
+      objectReference: {fileID: 0}
     - target: {fileID: 7941580947452887962, guid: ac3c88a2838d974439d1ad6d5020e46a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,11 +13,17 @@ public class PlayerMovement : MonoBehaviour
     public float VerticalInput { get; private set; }
     public bool IsSprinting { get; private set; }
     public float CurrentSpeed;
-    
+    public string FloorTag { get; private set; }
+    public bool isMoving { get; private set; }
+
+
 
     public Vector3 MoveDirection { get; private set; }
     public Vector3 MoveDirectionUI { get; private set; }
     public Rigidbody Rb { get; private set; }
+
+
+    public bool IsHidden { get; set; }
 
 
     private void Awake()
@@ -24,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.Initialize();
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
+        IsHidden = false;
 
         HorizontalInput = 0;
         VerticalInput = 0;
@@ -34,10 +42,23 @@ public class PlayerMovement : MonoBehaviour
         CurrentSpeed = playerData.MoveSpeed;
     }
 
+
     void Update()
     {
         ApplyGravity();
+
+        Ray ray = new Ray(transform.position, Vector3.down * 2);
+        //ver el ray en la escena
+        Debug.DrawRay(ray.origin, ray.direction * 2, Color.red);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            FloorTag = hit.collider.tag;
+            Debug.Log("Estás pisando" + FloorTag);
+        }
+        
     }
+
 
     void FixedUpdate()
     {
@@ -47,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         MoveDirection.Normalize();
 
         Rb.velocity = MoveDirection * CurrentSpeed;
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -56,26 +78,22 @@ public class PlayerMovement : MonoBehaviour
             Vector2 input = context.ReadValue<Vector2>();
             HorizontalInput = input.x;
             VerticalInput = input.y;
-            Debug.Log("se mueve");
-            
+            isMoving = true;
+
+            //Debug.Log("se mueve");
+
             //Edgar
-            // verifica tipo de piso y reproducir sonido si es madera o concreto
-            if( Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 1.5f) )
+            // verifica el tag del piso y si es isMoving = true , entonces reproduce el sonido de pasos
+            /*
+            if (FloorTag == "Concreto" && isMoving)
             {
-                if (hit.collider.CompareTag("Muelle"))
-                {
-                    SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
-                }
-                else if (hit.collider.CompareTag("Concreto"))
-                {
-                    SoundManager.PlaySound(SoundManager.Sound.PlayerWalkConcrete);
-                }
+                SoundManager.PlaySound(SoundManager.Sound.PlayerWalkConcrete);
             }
-            else
+            else if (FloorTag == "Muelle" && isMoving)
             {
-                Debug.Log("No hay piso");
+                //SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
             }
-            
+            */
 
         }
         else if (context.canceled)
@@ -83,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             HorizontalInput = 0;
             VerticalInput = 0;
             MoveDirection = Vector3.zero;
-            Debug.Log("se para");
+            isMoving = false;
         }
     }
 

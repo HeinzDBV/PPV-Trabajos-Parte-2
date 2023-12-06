@@ -14,7 +14,7 @@ public class EnemyData : ScriptableObject
     public float ViewRange = 110f;
     public float AttackRange = 2f;
 
-    public float PatrolWaitTime = 2f;
+    public float PatrolWaitTime = 5f;
     public float ChaseWaitTime = 2f;
 
     public LayerMask TargetMask;

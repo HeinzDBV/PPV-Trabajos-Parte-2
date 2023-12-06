@@ -22,7 +22,6 @@ public class EnemyController : MonoBehaviour
 
     public NavMeshAgent NavMeshAgent { get; private set; }
     public Animator Animator { get; private set; }
-
     #endregion
 
     #region Other Variables
@@ -31,6 +30,8 @@ public class EnemyController : MonoBehaviour
     public bool IsPlayerInSight { get; set; }
     public Transform PlayerPosition { get; set; }
     public Vector3 PlayerLastPosition { get; set; }
+    public GameObject Player { get; set; }
+    public PlayerMovement PlayerMovement { get; set; }
 
     #endregion
 
@@ -45,6 +46,9 @@ public class EnemyController : MonoBehaviour
         NavMeshAgent = GetComponent<NavMeshAgent>();
 
         PlayerLastPosition = Vector3.zero;
+        Player = GameObject.Find("Player");
+        PlayerMovement = Player.GetComponent<PlayerMovement>();
+        Animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -56,6 +60,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         StateMachine.CurrentState.LogicUpdate();
+        Debug.DrawRay(transform.position, transform.forward * 3);
     }
 
     void FixedUpdate()
