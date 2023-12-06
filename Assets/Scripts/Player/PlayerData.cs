@@ -7,7 +7,10 @@ public class PlayerData : ScriptableObject
 {
     [Header("Movement")]
     public float MoveSpeed = 12f;
-    public float SprintSpeed = 18f;
+    public float SprintSpeed = 6f;
+    public float CrouchSpeed = 6f;
+    public float CrouchTransform = 0.5f;
+    public float Gravity = 9.81f;
 
     [Header("Look")]
     public float SensY = 20f;

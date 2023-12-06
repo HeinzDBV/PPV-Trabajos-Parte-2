@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   MoveSpeed: 10
-  SprintSpeed: 18
+  SprintSpeed: 6
+  CrouchSpeed: 6
+  CrouchTransform: 0.5
+  Gravity: 100
   SensY: 20
   SensX: 20
