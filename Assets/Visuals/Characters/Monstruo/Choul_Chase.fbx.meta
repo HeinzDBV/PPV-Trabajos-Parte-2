@@ -3,7 +3,12 @@ guid: dfd3aebaa926b7d4e817ad3c27df7e50
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS1
+    second: {fileID: 2100000, guid: 1c2419f9aef9b3a488243c34a2e07828, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,7 +21,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -81,8 +87,398 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Ghoul_rig
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: tail_bone
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: waist
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: lower_spine
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_shoulder
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_shoulder
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_elbow
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_elbow
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_wrist
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_wrist
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: upper_spine
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Choul_Chase(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ghoul_low
+      parentName: Choul_Chase(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ghoul_stones_low
+      parentName: Ghoul_low
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ghoul_body_low
+      parentName: Ghoul_low
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_claw_low
+      parentName: Ghoul_low
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_claw_low
+      parentName: Ghoul_low
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ghoul_rig
+      parentName: Choul_Chase(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_wrist_IK
+      parentName: Ghoul_rig
+      position: {x: -0.4870644, y: 1.495891, z: 0.8322689}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_wrist_IK
+      parentName: Ghoul_rig
+      position: {x: 0.65825313, y: 1.5197839, z: 0.797459}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_MASTER_CON
+      parentName: Ghoul_rig
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MASTER_CON
+      parentName: ZERO_MASTER_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_waist_CON
+      parentName: MASTER_CON
+      position: {x: -0, y: 0.8739055, z: -0.1554987}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: waist_CON
+      parentName: ZERO_waist_CON
+      position: {x: -0, y: -0.020978648, z: -0.016117575}
+      rotation: {x: 0.11484977, y: -0, z: -0, w: 0.9933829}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_lower_spine_CON
+      parentName: waist_CON
+      position: {x: -1.6937526e-32, y: 0.29791918, z: 0.014153464}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lower_spine_CON
+      parentName: ZERO_lower_spine_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.04739601, y: 0, z: -0, w: 0.9988762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_upper_spine_CON
+      parentName: lower_spine_CON
+      position: {x: -1.4614347e-17, y: 0.37121817, z: 0.041246463}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: upper_spine_CON
+      parentName: ZERO_upper_spine_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_neck_CON
+      parentName: upper_spine_CON
+      position: {x: 2.635222e-18, y: 0.269084, z: -0.009820585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck_CON
+      parentName: ZERO_neck_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.08386363, y: 0, z: -0, w: 0.99647725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_head_CON
+      parentName: neck_CON
+      position: {x: -3.8261752e-17, y: 0.13552414, z: 0.1139188}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_CON
+      parentName: ZERO_head_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_r_clavicle_CON
+      parentName: upper_spine_CON
+      position: {x: 0.0852715, y: 0.19564575, z: 0.00000034332274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_clavicle_CON
+      parentName: ZERO_r_clavicle_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_r_shoulder_CON
+      parentName: r_clavicle_CON
+      position: {x: 0.32974848, y: 0.047730103, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_shoulder_CON
+      parentName: ZERO_r_shoulder_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.5645311, y: 0, z: -0, w: 0.8254118}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_r_elbow_PV
+      parentName: r_shoulder_CON
+      position: {x: 0.22272502, y: -0.28058013, z: -0.06137799}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_elbow_PV
+      parentName: ZERO_r_elbow_PV
+      position: {x: 7.1054265e-17, y: 0, z: -0.38}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_r_wrist_CON
+      parentName: r_shoulder_CON
+      position: {x: -0.41502, y: -1.76544, z: 0.116216}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_wrist_CON
+      parentName: ZERO_r_wrist_CON
+      position: {x: 0.65825313, y: 0.9894281, z: 0.05879835}
+      rotation: {x: -0.10815025, y: -0.46039653, z: 0.20190942, w: 0.85765445}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_l_clavicle_CON
+      parentName: upper_spine_CON
+      position: {x: -0.08527146, y: 0.1956482, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_clavicle_CON
+      parentName: ZERO_l_clavicle_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_l_shoulder_CON
+      parentName: l_clavicle_CON
+      position: {x: -0.3297489, y: 0.047726743, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_shoulder_CON
+      parentName: ZERO_l_shoulder_CON
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.56366694, y: 0.031222709, z: 0.04565132, w: 0.8241485}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_l_elbow_PV
+      parentName: l_shoulder_CON
+      position: {x: -0.22272553, y: -0.2805754, z: -0.77691764}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_elbow_PV
+      parentName: ZERO_l_elbow_PV
+      position: {x: 7.1054265e-17, y: -2.842171e-16, z: 0.38}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ZERO_l_wrist_CON
+      parentName: l_shoulder_CON
+      position: {x: 0.41502035, y: -1.7654392, z: 0.11621634}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_wrist_CON
+      parentName: ZERO_l_wrist_CON
+      position: {x: -0.5769726, y: 0.9603584, z: 0.05479031}
+      rotation: {x: -0.13413796, y: 0.3514854, z: -0.19264309, w: 0.90628564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: waist
+      parentName: Ghoul_rig
+      position: {x: -0, y: 0.86967427, z: -0.151137}
+      rotation: {x: 0.49822384, y: -0.5017699, z: -0.49822384, w: 0.50176984}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: lower_spine
+      parentName: waist
+      position: {x: -0.2769475, y: 2.0237573e-17, z: 1.6937526e-32}
+      rotation: {x: -0.9982674, y: 0.058840692, z: 0.000000029802322, w: -0.000000029802322}
+      scale: {x: 1.0000002, y: 0.9999999, z: 1}
+    - name: upper_spine
+      parentName: lower_spine
+      position: {x: -0.3735026, y: -2.1461962e-17, z: -1.4614347e-17}
+      rotation: {x: 0.997295, y: -0.07350235, z: -0.0000000022399076, w: 0.0000000021430686}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: neck
+      parentName: upper_spine
+      position: {x: -0.26926324, y: 1.2006767e-16, z: -7.469624e-18}
+      rotation: {x: -0.96572757, y: 0.25955775, z: 0.000000007781426, w: 0.00000006644017}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: head
+      parentName: neck
+      position: {x: -0.17704315, y: -3.5380328e-16, z: -6.48417e-17}
+      rotation: {x: 0.0000000023002578, y: -9.021912e-10, z: 0.041445166, w: 0.99914086}
+      scale: {x: 1, y: 1.0000001, z: 0.99999976}
+    - name: head_nub
+      parentName: head
+      position: {x: -0.39859968, y: -3.1974422e-16, z: -6.9567047e-10}
+      rotation: {x: 0.27173582, y: -0.6528091, z: 0.27173582, w: 0.65280914}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999994}
+    - name: l_clavicle
+      parentName: upper_spine
+      position: {x: -0.19551799, y: 0.0071356934, z: 0.08527146}
+      rotation: {x: -0.526083, y: 0.47247934, z: 0.45297772, w: 0.5429652}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: l_shoulder
+      parentName: l_clavicle
+      position: {x: -0.3331849, y: -1.7763567e-16, z: 6.448962e-17}
+      rotation: {x: -0.10969163, y: -0.013182834, z: 0.087786086, w: 0.9899937}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: l_elbow
+      parentName: l_shoulder
+      position: {x: -0.36345077, y: -1.2434498e-16, z: 0}
+      rotation: {x: 0.33330297, y: 0.03126511, z: -0.014930068, w: 0.94218296}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000007}
+    - name: l_wrist
+      parentName: l_elbow
+      position: {x: -0.5005894, y: 2.3092638e-16, z: -2.664535e-16}
+      rotation: {x: 0.121341184, y: -0.007945047, z: 0.09914415, w: 0.98761517}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1}
+    - name: l_hand
+      parentName: l_wrist
+      position: {x: -0.29595858, y: -2.1316282e-16, z: -3.5527136e-17}
+      rotation: {x: -0.3541709, y: -0.117370054, z: 0.04370052, w: 0.9267565}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.9999998}
+    - name: r_clavicle
+      parentName: upper_spine
+      position: {x: -0.1955156, y: 0.00713595, z: -0.0852715}
+      rotation: {x: -0.52608526, y: 0.4724768, z: -0.45297515, w: -0.5429674}
+      scale: {x: 1.0000004, y: 1, z: 0.9999999}
+    - name: r_shoulder
+      parentName: r_clavicle
+      position: {x: -0.33318496, y: 5.611505e-17, z: -5.2262075e-17}
+      rotation: {x: 0.117317855, y: 0.014975678, z: 0.09013084, w: 0.98888254}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000011}
+    - name: r_elbow
+      parentName: r_shoulder
+      position: {x: -0.363454, y: -2.981747e-17, z: -3.2019606e-17}
+      rotation: {x: -0.33267638, y: -0.03209982, z: -0.01724999, w: 0.9423367}
+      scale: {x: 1.0000014, y: 1.0000004, z: 1.0000017}
+    - name: r_wrist
+      parentName: r_elbow
+      position: {x: -0.5005854, y: -8.574466e-17, z: -3.5541162e-17}
+      rotation: {x: -0.12309006, y: 0.007634416, z: 0.09782242, w: 0.987533}
+      scale: {x: 0.9999998, y: 1.0000001, z: 0.99999994}
+    - name: r_hand
+      parentName: r_wrist
+      position: {x: -0.29596043, y: 1.7866953e-16, z: 6.548183e-17}
+      rotation: {x: 0.354617, y: 0.11601687, z: 0.047236692, w: 0.92658275}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.9999997}
+    - name: tail_bone
+      parentName: waist
+      position: {x: 0.6596662, y: -0.0046784836, z: -0.000058297017}
+      rotation: {x: 0.0019183498, y: 0.7071042, z: -0.70710003, w: -0.003096491}
+      scale: {x: 1, y: 1, z: 1.0000005}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
