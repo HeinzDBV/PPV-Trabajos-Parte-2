@@ -1,8 +1,8 @@
 INCLUDE ../../../globals.ink
 { 
-- madre == 0 : -> Main 
-- madre == 1: -> PostA
-- madre == 2: -> PostB
+- ezequiel == 0 : -> Main 
+- ezequiel == 1: -> PostA
+- ezequiel == 2: -> PostB
 }
 
 
@@ -11,51 +11,48 @@ INCLUDE ../../../globals.ink
 
 ===Main===
 #portrait:Ez_normal #layout: Left
-Oh son...
-I better get out of here to find you again.
-But when I see you, i can´t help but remember...
-Your mother...
-She also suffered quite a lot, just like you.
-If only I could help her get rid of the pain...
+Whe... where am i?
+I... where... where is my boat. I remember the boat. It was dark, but i had my light...
+My light... I have to find it.
 
-    + [Let her live]
+    + [Leave it]
     #decision: true
         -> A
-    + [End her suffering]
+    + [Carry on the Boat]
     #decision: false
         -> B
 
 ===A===
-#portrait:Ez_normal #layout: Left
-I wish I could do something to help you.
+#portrait:Ez_angry #layout: Left
+No... no.. i have to be diferent!
 #portrait:Ez_sad
-But I just can´t...
-I'm not brave enough.
-#mission: Escape!
+If it's not for yourself, do it for them old man.
+#mission: Enter the Boat
 
 ->END
 
 ===B===
 #portrait:Ez_angry #layout: Left
-Ngh...
+I promised it...
 #portrait:Ez_sad
-I...
-Sorry.
-I'm so sorry.
+But...
 #portrait:Ez_normal
-I hope to see you again in another life.
-#mission: Escape!
+We have to eat.
+#mission: Enter the Boat #body 
 ->END
 
 ===PostA===
-#portrait:Ez_sad
-I'm not brave enough.
-#mission: Escape!
+#portrait:Ez_normal
+I won't, just 
 
 ->END
 
 ===PostB===
+#portrait:Ez_angry #layout: Left
+I promised it...
 #portrait:Ez_sad
-I'm so sorry.
-#mission: Escape!
+But...
+#portrait:Ez_normal
+We have to eat.
+#mission: Enter the Boat #body 
 ->END

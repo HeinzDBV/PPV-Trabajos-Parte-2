@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"pokemon_name"},"str","^","/str",{"VAR=":"question"},"str","^","/str",{"VAR=":"answer"},"/ev","end",null],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev",0,{"VAR=":"cuerpo"},0,{"VAR=":"hijo"},0,{"VAR=":"ezequiel"},0,{"VAR=":"madre"},0,{"VAR=":"laberinto"},"/ev","end",null],"#f":1}],"listDefs":{}}
