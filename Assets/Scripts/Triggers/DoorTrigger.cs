@@ -14,12 +14,12 @@ public class DoorTrigger : MonoBehaviour
         //Si se oprime el boton de interaccion
         if (InputManager.GetInstance().GetInteractPressed() && DoorOpen == false)
         {
-            DoorBisagra.rotation = new Quaternion(0, 180, 0, 0);
+            DoorBisagra.rotation = new Quaternion(0, DoorBisagra.rotation.y + 90, 0, 0);
             DoorOpen = true;
         }
         else if (InputManager.GetInstance().GetInteractPressed() && DoorOpen == true) 
         {
-            DoorBisagra.rotation = new Quaternion(0, 90, 0, 0);
+            DoorBisagra.rotation = new Quaternion(0, DoorBisagra.rotation.y - 90, 0, 0);
             DoorOpen = false;
         }
 
