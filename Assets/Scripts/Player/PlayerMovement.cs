@@ -23,12 +23,15 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody Rb { get; private set; }
 
 
+    public bool IsHidden { get; set; }
+
 
     private void Awake()
     {
         SoundManager.Initialize();
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
+        IsHidden = false;
 
         HorizontalInput = 0;
         VerticalInput = 0;
@@ -53,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
             FloorTag = hit.collider.tag;
             Debug.Log("Estás pisando" + FloorTag);
         }
+        
     }
 
 
@@ -76,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             VerticalInput = input.y;
             isMoving = true;
 
-            Debug.Log("se mueve");
+            //Debug.Log("se mueve");
 
             //Edgar
             // verifica el tag del piso y si es isMoving = true , entonces reproduce el sonido de pasos
@@ -87,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (FloorTag == "Muelle" && isMoving)
             {
-                SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
+                //SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
             }
             */
 
@@ -98,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
             VerticalInput = 0;
             MoveDirection = Vector3.zero;
             isMoving = false;
-            Debug.Log("se para");
         }
     }
 

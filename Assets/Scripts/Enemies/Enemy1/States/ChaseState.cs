@@ -14,7 +14,7 @@ public class ChaseState : EnemyState
     {
         base.Enter();
 
-        enemy.PlayerLastPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        enemy.PlayerLastPosition = enemy.Player.transform.position;
         waitTime = enemyData.ChaseWaitTime;
 
         Debug.Log("Enter Chase State");
@@ -30,20 +30,55 @@ public class ChaseState : EnemyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        
+        enemy.EnvironmentView();
 
-        if (Vector3.Distance(enemy.transform.position, enemy.PlayerLastPosition) <= enemyData.AttackRange)
+        if (Vector3.Distance(enemy.transform.position, enemy.Player.transform.position) <= enemyData.AttackRange && !enemy.PlayerMovement.IsHidden)
         {
+            enemy.Stop();
+            enemy.Animator.SetBool("isScreaming", true);
             Debug.Log("JUMPSCARE");
         }
         else if (enemy.NavMeshAgent.remainingDistance <= enemy.NavMeshAgent.stoppingDistance)
         {
-            enemy.Stop();
-            stateMachine.ChangeState(enemy.PatrolState);
+            
+            if (enemy.IsPlayerInSight)
+            {
+                enemy.PlayerLastPosition = enemy.Player.transform.position;
+                waitTime = enemyData.ChaseWaitTime;
+                enemy.SetDestination(enemy.PlayerLastPosition);
+                enemy.Move(enemyData.SpeedRun);
+            }
+            else
+            {
+                if (waitTime <= 0)
+                {
+                    enemy.StateMachine.ChangeState(enemy.PatrolState);
+                }
+                else
+                {
+                    enemy.Stop();
+                    waitTime -= Time.deltaTime;
+                }
+            }
         }
-        else
+        else if (enemy.IsPlayerInSight)
         {
-            enemy.Move(enemyData.SpeedRun);
+            enemy.PlayerLastPosition = enemy.Player.transform.position;
             enemy.SetDestination(enemy.PlayerLastPosition);
+            enemy.Move(enemyData.SpeedRun);
+        }
+        else 
+        {
+            if (waitTime <= 0)
+            {
+                enemy.StateMachine.ChangeState(enemy.PatrolState);
+            }
+            else
+            {
+                enemy.Stop();
+                waitTime -= Time.deltaTime;
+            }
         }
     }
 

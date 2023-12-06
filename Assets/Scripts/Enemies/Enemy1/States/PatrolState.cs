@@ -43,11 +43,15 @@ public class PatrolState : EnemyState
                 waitTime -= Time.deltaTime;
             }
         }
-
-        if (enemy.IsPlayerInSight)
+        else if (enemy.IsPlayerInSight)
         {
             Debug.Log("Player in sight");
             stateMachine.ChangeState(enemy.ChaseState);
+        }
+        else
+        {
+            enemy.SetDestination(enemy.Waypoints[enemy.CurrentWaypointIndex].position);
+            enemy.Move(enemyData.SpeedWalk);
         }
     }
 
