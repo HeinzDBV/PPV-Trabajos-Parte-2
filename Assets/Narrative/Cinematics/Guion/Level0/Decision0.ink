@@ -5,54 +5,49 @@ INCLUDE ../../../globals.ink
 - cuerpo == 2: -> PostB
 }
 
-
-
-
-
 ===Main===
-#portrait:Ez_normal #layout: Left
-Whe... where am i?
-I... where... where is my boat. I remember the boat. It was dark, but i had my light...
-My light... I have to find it.
-
+#speaker:Ezequiel #portrait:Ez_normal #layout: Left
+I was doing this for one last time... i guess.
+But... something happened... Why i'm alive? 
+I should have... dead?
+But... now that i'm not. i have to be there fo my family.
     + [Leave it]
     #decision: true
+    #body:uno
         -> A
-    + [Carry on the Boat]
+    + [Carry]
     #decision: false
+    #body:dos
         -> B
 
 ===A===
-#portrait:Ez_angry #layout: Left
+#speaker:Ezequiel #portrait:Ez_angry #layout: Left
 No... no.. i have to be diferent!
 #portrait:Ez_sad
 If it's not for yourself, do it for them old man.
 #mission: Enter the Boat
-
+~ cuerpo = 1 
 ->END
 
 ===B===
-#portrait:Ez_angry #layout: Left
+#speaker:Ezequiel #portrait:Ez_angry #layout:Left
 I promised it...
 #portrait:Ez_sad
 But...
 #portrait:Ez_normal
 We have to eat.
 #mission: Enter the Boat #body 
+~ cuerpo = 2
 ->END
 
 ===PostA===
-#portrait:Ez_normal
-I won't, just 
+#speaker:Ezequiel #portrait:Ez_sad #layout:Left
+I won't.
+Ezequiel... Just... Get on the boat.
 
 ->END
 
 ===PostB===
-#portrait:Ez_angry #layout: Left
-I promised it...
-#portrait:Ez_sad
-But...
-#portrait:Ez_normal
-We have to eat.
-#mission: Enter the Boat #body 
+#speaker:Ezequiel #portrait:Ez_angry #layout:Left
+Let's finish this.
 ->END
