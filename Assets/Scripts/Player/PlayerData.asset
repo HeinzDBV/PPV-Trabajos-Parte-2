@@ -16,6 +16,6 @@ MonoBehaviour:
   SprintSpeed: 6
   CrouchSpeed: 6
   CrouchTransform: 0.5
-  Gravity: 100
+  Gravity: 200
   SensY: 20
   SensX: 20
