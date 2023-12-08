@@ -9090,11 +9090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 165.76
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -426.71
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1413792846801104744, guid: 1b29d789d2379a944809f07f23c44f8e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50313,6 +50313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673275715}
+  - component: {fileID: 673275716}
   m_Layer: 0
   m_Name: Muelle-escaleras
   m_TagString: Untagged
@@ -50383,6 +50384,19 @@ Transform:
   - {fileID: 1943053482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673275716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673275714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923ab810055ffb64bb196890789a5d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToApply: Muelle
 --- !u!1 &674627320
 GameObject:
   m_ObjectHideFlags: 0

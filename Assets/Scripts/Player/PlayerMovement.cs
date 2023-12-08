@@ -16,11 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public string FloorTag { get; private set; }
     public bool isMoving { get; private set; }
 
-
-
     public Vector3 MoveDirection { get; private set; }
     public Vector3 MoveDirectionUI { get; private set; }
     public Rigidbody Rb { get; private set; }
+
 
 
     public bool IsHidden { get; set; }
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         SoundManager.Initialize();
-        Rb = GetComponent<Rigidbody>();
+                Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
         IsHidden = false;
 
@@ -46,19 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ApplyGravity();
-
-        Ray ray = new Ray(transform.position, Vector3.down * 2);
-        //ver el ray en la escena
-        Debug.DrawRay(ray.origin, ray.direction * 2, Color.red);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            FloorTag = hit.collider.tag;
-            //Debug.Log("Estás pisando" + FloorTag);
-        }
-        
     }
-
 
     void FixedUpdate()
     {
@@ -68,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
         MoveDirection.Normalize();
 
         Rb.velocity = MoveDirection * CurrentSpeed + new Vector3(0, Rb.velocity.y, 0);
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -79,21 +65,7 @@ public class PlayerMovement : MonoBehaviour
             HorizontalInput = input.x;
             VerticalInput = input.y;
             isMoving = true;
-
-            //Debug.Log("se mueve");
-
-            //Edgar
-            // verifica el tag del piso y si es isMoving = true , entonces reproduce el sonido de pasos
-            /*
-            if (FloorTag == "Concreto" && isMoving)
-            {
-                SoundManager.PlaySound(SoundManager.Sound.PlayerWalkConcrete);
-            }
-            else if (FloorTag == "Muelle" && isMoving)
-            {
-                //SoundManager.PlaySound(SoundManager.Sound.PlayerWalkWood);
-            }
-            */
+            Debug.Log("Se mueve");
 
         }
         else if (context.canceled)
@@ -102,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
             VerticalInput = 0;
             MoveDirection = Vector3.zero;
             isMoving = false;
+            Debug.Log("No se mueve");
         }
     }
 

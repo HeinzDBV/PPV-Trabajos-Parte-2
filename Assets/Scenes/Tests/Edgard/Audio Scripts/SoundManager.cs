@@ -18,8 +18,8 @@ public static class SoundManager{
 
     public static void Initialize(){
         soundTimerDictionary = new Dictionary<Sound, float>();
-        soundTimerDictionary[Sound.PlayerWalkWood] = 0f;
-        soundTimerDictionary[Sound.PlayerWalkConcrete] = 0f;
+        soundTimerDictionary[Sound.PlayerWalkWood] = .0f;
+        soundTimerDictionary[Sound.PlayerWalkConcrete] = .0f;
         Debug.Log("Audios cargados");
 
     }
