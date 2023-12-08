@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         MoveDirectionUI.Normalize();
         MoveDirection.Normalize();
 
-        Rb.velocity = MoveDirection * CurrentSpeed;
+        Rb.velocity = MoveDirection * CurrentSpeed + new Vector3(0, Rb.velocity.y, 0);
 
     }
 
