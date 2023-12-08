@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         StateMachine.CurrentState.LogicUpdate();
-        Debug.DrawRay(transform.position, transform.forward * 3);
+        Debug.DrawRay(transform.position, transform.forward * enemyData.ViewRadius);
     }
 
     void FixedUpdate()

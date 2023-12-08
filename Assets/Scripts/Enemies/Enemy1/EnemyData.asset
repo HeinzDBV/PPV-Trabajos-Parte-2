@@ -15,7 +15,7 @@ MonoBehaviour:
   TimeToRotate: 2
   SpeedWalk: 5
   SpeedRun: 9
-  ViewRadius: 15
+  ViewRadius: 20
   ViewRange: 110
   AttackRange: 2
   PatrolWaitTime: 2
