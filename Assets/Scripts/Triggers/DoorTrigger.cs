@@ -12,18 +12,29 @@ public class DoorTrigger : MonoBehaviour
     void Update()
     {
         //Si se oprime el boton de interaccion
-        if (InputManager.GetInstance().GetInteractPressed() && DoorOpen == false)
+        if (InputManager.GetInstance().GetInteractPressed() && playerInRange == true && DoorOpen == false)
         {
             DoorBisagra.rotation = new Quaternion(0, DoorBisagra.rotation.y + 90, 0, 0);
             DoorOpen = true;
         }
-        else if (InputManager.GetInstance().GetInteractPressed() && DoorOpen == true) 
+        else if (InputManager.GetInstance().GetInteractPressed() && playerInRange == true && DoorOpen == true) 
         {
             DoorBisagra.rotation = new Quaternion(0, DoorBisagra.rotation.y - 90, 0, 0);
             DoorOpen = false;
         }
 
     }
+
+
+    private void OpendDoor()
+    {
+        
+    }
+    private void CloseDoor()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         //Si el Objeto colisionado tiene la etiqueta de PLAYER -> Activamos Flag

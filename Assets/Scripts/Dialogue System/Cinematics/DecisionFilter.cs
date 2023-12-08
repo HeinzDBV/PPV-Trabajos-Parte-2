@@ -47,10 +47,6 @@ public class DecisionFilter : MonoBehaviour
 
     // }
 
-    public void MakeitBe()
-    {
-
-    }
     private void OnTriggerEnter(Collider collision)
     {
         playerInRange = collision.gameObject.CompareTag("Player") ? true : false;

@@ -5,10 +5,6 @@ INCLUDE ../../../globals.ink
 - hijo == 2: -> PostB
 }
 
-
-
-
-
 ===Main===
 #portrait:Ez_sad #layout: Left
 What is this?...
